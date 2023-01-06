@@ -3,7 +3,6 @@ import model.Player;
 import model.Team;
 
 public class Highlights {
-    /*
     public Player[] getTop5Scorers(){
 
     }
@@ -15,5 +14,4 @@ public class Highlights {
     public Player[] getTop5Assisters(){
 
     }
-     */
 }
