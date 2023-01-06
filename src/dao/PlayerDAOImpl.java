@@ -1,5 +1,8 @@
 package dao;
 
+import model.Player;
+
+import model.Player;
 public class PlayerDAOImpl implements PlayerDAO {
     @Override
     public void updatePlayer(){
@@ -13,4 +16,10 @@ public class PlayerDAOImpl implements PlayerDAO {
     public void addPlayer(){
 
     }
+
+    @Override
+    public Player[] getPlayer() {
+        return new Player[0];
+    }
+
 }
