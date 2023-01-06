@@ -1,7 +1,7 @@
 package model;
 
 public class Player {
-    public Player(String name, int age, float height, int weight, String nationality) {
+    public Player(String name, long age, long height, long weight, String nationality) {
         this.name = name;
         this.age = age;
         this.height = height;
@@ -13,9 +13,9 @@ public class Player {
     }
 
     private String name;
-    private int age;
-    private float height;
-    private int weight;
+    private long age;
+    private long height;
+    private long weight;
     private String Nationality;
 
 
@@ -27,7 +27,7 @@ public class Player {
         this.name = name;
     }
 
-    public int getAge() {
+    public long getAge() {
         return age;
     }
 
@@ -39,11 +39,11 @@ public class Player {
         return height;
     }
 
-    public void setHeight(float height) {
+    public void setHeight(long height) {
         this.height = height;
     }
 
-    public int getWeight() {
+    public long getWeight() {
         return weight;
     }
 
