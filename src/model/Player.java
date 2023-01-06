@@ -1,6 +1,8 @@
 package model;
 
-public class Player {
+public class Player
+{
+
     public Player(String name, long age, long height, long weight, String nationality) {
         this.name = name;
         this.age = age;

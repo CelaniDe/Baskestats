@@ -4,12 +4,12 @@ public class Team
 {
     private String name;
     private String city;
-    private String founded;
+    private long founded;
     private String CEO;
 
     public Team() {}
 
-    public Team(String name, String city, String founded, String CEO) {
+    public Team(String name, String city, long founded, String CEO) {
         this.name = name;
         this.city = city;
         this.founded = founded;
@@ -36,12 +36,12 @@ public class Team
         this.city = city;
     }
 
-    public String getFounded()
+    public long getFounded()
     {
         return founded;
     }
 
-    public void setFounded(String founded)
+    public void setFounded(long founded)
     {
         this.founded = founded;
     }
