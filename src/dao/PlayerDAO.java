@@ -6,6 +6,4 @@ public interface PlayerDAO
     public void deletePlayer();
     public void addPlayer();
 
-
-
 }
