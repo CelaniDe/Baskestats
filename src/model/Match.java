@@ -1,18 +1,16 @@
 package model;
 
 public class Match {
+
+    public Match() {}
+
+    public Match(String datetime, String stadium) {
+        this.datetime = datetime;
+        this.stadium = stadium;
+    }
     private String datetime;
     private String stadium;
 
-    public Match(String datetime) {
-        this.datetime = datetime;
-    }
-
-    public Match(String stadium) {
-        this.stadium = stadium;
-    }
-
-    public Match() {}
 
     public String getStadium() {
         return stadium;
