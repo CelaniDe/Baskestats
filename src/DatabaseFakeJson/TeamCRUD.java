@@ -12,15 +12,14 @@ import java.util.List;
 
 public class TeamCRUD
 {
-//    private static String TEAMS_JSON_FILE_PATH = "C:\\Users\\CelaniDe\\Desktop\\Baskestats\\src\\json_data\\teams.json";
+    private static String TEAMS_JSON_FILE_PATH = "src/json_data/teams.json";
     public List<Team> getTeams()
     {
-        File file = new File("src/json_dat/teams.json");
         JSONParser parser = new JSONParser();
         List<Team> teams = new ArrayList<>();
         try
         {
-            Object obj = parser.parse(new FileReader(file));
+            Object obj = parser.parse(new FileReader(TEAMS_JSON_FILE_PATH));
             JSONArray teamList = (JSONArray) obj;
 
             for(int i = 0; i < teamList.size(); i++)
