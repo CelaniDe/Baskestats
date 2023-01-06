@@ -1,32 +1,32 @@
 package model;
 
 public class Match {
-    private string datetime;
-    private string stadium;
+    private String datetime;
+    private String stadium;
 
-    public Match(string datetime) {
+    public Match(String datetime) {
         this.datetime = datetime;
     }
 
-    public Match(string stadium) {
+    public Match(String stadium) {
         this.stadium = stadium;
     }
 
     public Match() {}
 
-    public string getStadium() {
+    public String getStadium() {
         return stadium;
     }
 
-    public void setStadium(string stadium) {
+    public void setStadium(String stadium) {
         this.stadium = stadium;
     }
 
-    public string getDatetime() {
+    public String getDatetime() {
         return datetime;
     }
 
-    public void setDatetime(string datetime) {
+    public void setDatetime(String datetime) {
         this.datetime = datetime;
     }
 }
