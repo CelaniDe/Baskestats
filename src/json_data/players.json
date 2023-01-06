@@ -1,0 +1,29 @@
+[
+  {
+    "name": "LeBron James",
+    "age": 36,
+    "height": "6'9",
+    "weight": 250,
+    "nationality": "United States"
+  },
+  {
+    "name": "Stephen Curry",
+    "age": 33,
+    "height": "6'3",
+    "weight": 190,
+    "nationality": "United States"
+  },
+  {
+    "name": "Kevin Durant",
+    "age": 32,
+    "height": "6'11",
+    "weight": 240,
+    "nationality": "United States"
+  },
+  {
+    "name": "James Harden",
+    "age": 31,
+    "height": "6'5",
+    "weight": 220,
+    "nationality": "United States"  }
+]

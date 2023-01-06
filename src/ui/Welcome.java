@@ -13,6 +13,7 @@ public class Welcome extends JFrame
 
     public Welcome()
     {
+        setContentPane(panel1);
         setTitle("Welcome");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
