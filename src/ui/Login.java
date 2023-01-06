@@ -12,7 +12,7 @@ public class Login extends JFrame {
     private JButton loginButton;
 
     public Login(){
-
+        setContentPane(panel1);
         setTitle("Login");
         setResizable(false);
         setSize(500,500);
