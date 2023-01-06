@@ -1,4 +1,18 @@
 package dao;
 
-abstract class MatchDAOImpl implements MatchDAO{
+public class MatchDAOImpl implements MatchDAO{
+    @Override
+    public void updateMatch() {
+
+    }
+
+    @Override
+    public void deleteMatch() {
+
+    }
+
+    @Override
+    public void addMatch() {
+
+    }
 }
