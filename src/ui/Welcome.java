@@ -4,6 +4,13 @@ import javax.swing.*;
 
 public class Welcome extends JFrame
 {
+    private JPanel panel1;
+    private JButton loginButton;
+    private JButton createAccountButton;
+    private JLabel welcomeText;
+    private JLabel loginText;
+    private JLabel CreateAccountText;
+
     public Welcome()
     {
         setTitle("Welcome");
