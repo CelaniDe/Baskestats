@@ -37,5 +37,35 @@ public class PlayerCRUD {
         }
         return null;
     }
+    public void insertPlayers(List<Player> players) {
+        {
+            JSONParser parser = new JSONParser();
+            try
+            {
+                FileReader reader = new FileReader(PLAYERS_JSON_FILE_PATH);
+                Object obj = parser.parse(reader);
+                JSONArray playerList = (JSONArray) obj;
+                reader.close();
+
+                for (Player player : players) {
+                    JSONObject newPlayer = new JSONObject();
+                    newPlayer.put("id", JsonArrayUtils.getLastID(playerList)+1);
+                    newPlayer.put("name", player.getName());
+                    newPlayer.put("age", player.getAge());
+                    newPlayer.put("height", player.getHeight());
+                    newPlayer.put("weight", player.getWeight());
+                    newPlayer.put("Nationality", player.getWeight());
+                    playerList.add(newPlayer);
+                }
+                FileWriter file = new FileWriter(PLAYERS_JSON_FILE_PATH);
+                file.write(playerList.toJSONString());
+                file.close();
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+    }
 
 }
