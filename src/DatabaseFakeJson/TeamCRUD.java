@@ -40,5 +40,31 @@ public class TeamCRUD
         return teams;
     }
 
+    public void insertTeams(List<Team> teams)
+    {
+        JSONParser parser = new JSONParser();
+
+        try
+        {
+            Object obj = parser.parse(new FileReader(TEAMS_JSON_FILE_PATH));
+            JSONArray teamList = (JSONArray) obj;
+
+            for(Team team : teams)
+            {
+                JSONObject newPlayer = new JSONObject();
+                newPlayer.put("id", 1);
+                newPlayer.put("name", "TEST");
+                newPlayer.put("city", "1TEST");
+                newPlayer.put("founded", "2TEST");
+                newPlayer.put("CEO", "makiS");
+                teamList.add(newPlayer);
+            }
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+    }
+
 
 }
