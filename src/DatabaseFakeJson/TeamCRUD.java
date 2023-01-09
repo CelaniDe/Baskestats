@@ -14,6 +14,7 @@ import java.util.List;
 public class TeamCRUD
 {
     private static String TEAMS_JSON_FILE_PATH = "src/json_data/teams.json";
+
     public List<Team> getTeams()
     {
         JSONParser parser = new JSONParser();
@@ -25,11 +26,12 @@ public class TeamCRUD
 
             for(int i = 0; i < teamList.size(); i++)
             {
-                JSONObject playerObject = (JSONObject) teamList.get(i);
-                String name = (String) playerObject.get("name");
-                String city = (String) playerObject.get("city");
-                long founded = (long) playerObject.get("founded");
-                String ceo = (String) playerObject.get("CEO");
+//                teamList
+                JSONObject teamObject = (JSONObject) teamList.get(i);
+                String name = (String) teamObject.get("name");
+                String city = (String) teamObject.get("city");
+                long founded = (long) teamObject.get("founded");
+                String ceo = (String) teamObject.get("CEO");
                 Team newTeam = new Team(name,city,founded,ceo);
                 teams.add(newTeam);
             }
@@ -73,7 +75,38 @@ public class TeamCRUD
 
     }
 
+    public void deleteTeams(List<Integer> teams_ids)
+    {
+        JSONParser parser = new JSONParser();
+        try
+        {
+            FileReader reader = new FileReader(TEAMS_JSON_FILE_PATH);
+            Object obj = parser.parse(reader);
+            JSONArray teamList = (JSONArray) obj;
 
+            for(int team : teams_ids)
+            {
+                for(int i = 0; i < teamList.size(); i++)
+                {
+                    JSONObject teamObject = (JSONObject) teamList.get(i);
+                    int id = (int)((long) teamObject.get("id"));
+                    if(id == team)
+                    {
+                        teamList.remove(i);
+                    }
+                }
+            }
+
+            FileWriter file = new FileWriter(TEAMS_JSON_FILE_PATH);
+            file.write(teamList.toJSONString());
+            file.close();
+
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+    }
 
 
 }

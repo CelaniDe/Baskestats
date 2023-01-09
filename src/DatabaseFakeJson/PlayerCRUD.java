@@ -1,6 +1,7 @@
 package DatabaseFakeJson;
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,6 +11,7 @@ import org.json.simple.parser.JSONParser;
 import model.Player;
 public class PlayerCRUD {
     private File file = new File("src/json_data/players.json");
+    private static String PLAYERS_JSON_FILE_PATH = "src/json_data/players.json";
     public List<Player> getPlayers() {
         JSONParser parser = new JSONParser();
 
