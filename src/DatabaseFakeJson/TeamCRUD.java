@@ -7,6 +7,7 @@ import org.json.simple.parser.JSONParser;
 
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,29 +43,37 @@ public class TeamCRUD
 
     public void insertTeams(List<Team> teams)
     {
-        JSONParser parser = new JSONParser();
-
         try
         {
-            Object obj = parser.parse(new FileReader(TEAMS_JSON_FILE_PATH));
+            JSONParser parser = new JSONParser();
+            FileReader reader = new FileReader(TEAMS_JSON_FILE_PATH);
+            Object obj = parser.parse(reader);
             JSONArray teamList = (JSONArray) obj;
+            reader.close();
 
             for(Team team : teams)
             {
-                JSONObject newPlayer = new JSONObject();
-                newPlayer.put("id", 1);
-                newPlayer.put("name", "TEST");
-                newPlayer.put("city", "1TEST");
-                newPlayer.put("founded", "2TEST");
-                newPlayer.put("CEO", "makiS");
-                teamList.add(newPlayer);
+                JSONObject newTeam = new JSONObject();
+                newTeam.put("id", JsonArrayUtils.getLastID(teamList) + 1);
+                newTeam.put("name", team.getName());
+                newTeam.put("city", team.getCity());
+                newTeam.put("founded", team.getFounded());
+                newTeam.put("CEO", team.getCEO());
+                teamList.add(newTeam);
             }
+
+            FileWriter file = new FileWriter(TEAMS_JSON_FILE_PATH);
+            file.write(teamList.toJSONString());
+            file.close();
         }
         catch (Exception e)
         {
             e.printStackTrace();
         }
+
     }
+
+
 
 
 }
