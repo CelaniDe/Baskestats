@@ -4,24 +4,23 @@ import javax.swing.*;
 
 public class Team_Profile extends JFrame{
     private JPanel teamProfilePanel;
-    private JLabel teamprofileLabel;
+    private JLabel teamlabel;
     private JLabel teamImg;
-    private JLabel teamNameLabel;
     private JButton compareButton;
-    private JLabel teamSloganLabel;
-    private JLabel gamesPLayedLabel;
+    private JLabel nameLabel;
+    private JLabel starImg;
+    private JLabel sloganLabel;
+    private JLabel gamesLabel;
     private JLabel winsLabel;
     private JLabel playersLabel;
-    private JLabel firstPlayerImg;
-    private JLabel secondPlayerImg;
-    private JLabel thirdPlayerImg;
-    private JLabel fourthPlayerImg;
-    private JLabel fifthPlayerImg;
-    private JLabel firstNameLabel;
-    private JLabel secondNameLabel;
-    private JLabel thirdNameLabel;
-    private JLabel fourthNameLabel;
-    private JLabel fifthNameLabel;
+    private JLabel player1Img;
+    private JLabel player2Img;
+    private JLabel player3Img;
+    private JLabel name3Label;
+    private JLabel name1Label;
+    private JLabel name2Label;
+    private JLabel player4Img;
+    private JLabel name4Label;
 
     public Team_Profile() {
         setContentPane(teamProfilePanel);
