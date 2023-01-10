@@ -7,6 +7,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,6 +44,26 @@ public class AccountCRUD
         }
         catch (Exception e)
         {
+            e.printStackTrace();
+        }
+        return null;
+    }
+    public Account insertAccount(String username, String password) {
+        JSONParser parser = new JSONParser();
+        try {
+            FileReader reader = new FileReader(ACCOUNTS_JSON_FILE_PATH);
+            Object obj = parser.parse(reader);
+            JSONArray accountList = (JSONArray) obj;
+            reader.close();
+
+            Account newAccount = new Account(username, password, JsonArrayUtils.getLastID(accountList) + 1, false);
+            accountList.add(newAccount);
+
+            FileWriter file = new FileWriter(ACCOUNTS_JSON_FILE_PATH);
+            file.write(accountList.toJSONString());
+            file.close();
+            return newAccount;
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return null;
