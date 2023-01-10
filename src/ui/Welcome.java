@@ -29,5 +29,13 @@ public class Welcome extends JFrame
 
             }
         });
+
+        createAccountButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame frame = new Register();
+                dispose();
+            }
+        });
     }
 }

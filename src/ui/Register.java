@@ -1,6 +1,11 @@
 package ui;
 
+import dao.ClientDAO;
+import dao.ClientDAOImpl;
+
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Register extends JFrame{
     private JLabel registerText;
@@ -18,5 +23,12 @@ public class Register extends JFrame{
         setResizable(false);
         setSize(500,500);
         setVisible(true);
+        signUpButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ClientDAO clientDAO = new ClientDAOImpl();
+                clientDAO.addClient();
+            }
+        });
     }
 }
