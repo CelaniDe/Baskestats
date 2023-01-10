@@ -48,6 +48,7 @@ public class AccountCRUD
         }
         return null;
     }
+
     public Account insertAccount(String username, String password) {
         JSONParser parser = new JSONParser();
         try {
@@ -74,5 +75,30 @@ public class AccountCRUD
             e.printStackTrace();
         }
         return null;
+    }
+
+    public boolean existsAccount(String username)
+    {
+        JSONParser parser = new JSONParser();
+        try
+        {
+            Object obj = parser.parse(new FileReader(ACCOUNTS_JSON_FILE_PATH));
+            JSONArray accountsList = (JSONArray) obj;
+
+            for(int i = 0; i < accountsList.size(); i++)
+            {
+                JSONObject accountObject = (JSONObject) accountsList.get(i);
+                String nameFromJson = (String) accountObject.get("username");
+                if(nameFromJson.equals(username))
+                {
+                    return false;
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+        return true;
     }
 }
