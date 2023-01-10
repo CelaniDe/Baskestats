@@ -4,7 +4,7 @@ import javax.swing.*;
 
 public class Match extends  JFrame {
     private JPanel match;
-    private JButton pastButton;
+    private JButton testButton;
     private JButton presentButton;
     private JButton futureButton;
     private JLabel teamIconDateTeamLabel;
