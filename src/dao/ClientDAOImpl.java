@@ -16,9 +16,9 @@ public class ClientDAOImpl implements ClientDAO{
     }
 
     @Override
-    public Account addClient() {
+    public Account addClient(String username, String password) {
         AccountCRUD accountCRUD = new AccountCRUD();
-        Account accountToReturn = accountCRUD.insertAccount("Mpampis","112233!!");
+        Account accountToReturn = accountCRUD.insertAccount(username,password);
         return accountToReturn;
     }
 

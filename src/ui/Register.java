@@ -2,6 +2,7 @@ package ui;
 
 import dao.ClientDAO;
 import dao.ClientDAOImpl;
+import model.Account;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -15,8 +16,11 @@ public class Register extends JFrame{
     private JButton signUpButton;
     private JPanel panel2;
 
+    private Register my_frame;
+
     public Register()
     {
+        my_frame = this;
         setContentPane(panel2);
         setTitle("Welcome");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -27,7 +31,19 @@ public class Register extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 ClientDAO clientDAO = new ClientDAOImpl();
-                clientDAO.addClient();
+                Account createdAccount = clientDAO.addClient(usernameTextField.getText(),passwordTextField.getText());
+                if(createdAccount == null)
+                {
+                    JOptionPane.showMessageDialog(my_frame,
+                            "WARNING.",
+                            "Warning",
+                            JOptionPane.WARNING_MESSAGE);
+                }
+                else
+                {
+                    JFrame frame = new News();
+                    dispose();
+                }
             }
         });
     }
