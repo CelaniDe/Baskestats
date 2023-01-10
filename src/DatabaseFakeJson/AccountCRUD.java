@@ -50,31 +50,37 @@ public class AccountCRUD
     }
 
     public Account insertAccount(String username, String password) {
-        JSONParser parser = new JSONParser();
-        try {
-            FileReader reader = new FileReader(ACCOUNTS_JSON_FILE_PATH);
-            Object obj = parser.parse(reader);
-            JSONArray accountList = (JSONArray) obj;
-            reader.close();
-            int last_id = JsonArrayUtils.getLastID(accountList) + 1;
-
-            JSONObject newAccount = new JSONObject();
-            newAccount.put("username",username);
-            newAccount.put("password", password);
-            newAccount.put("id", last_id);
-            newAccount.put("account_type", false);
-            accountList.add(newAccount);
-
-            Account accountToReturn = new Account(username,password,last_id,false);
-
-            FileWriter file = new FileWriter(ACCOUNTS_JSON_FILE_PATH);
-            file.write(accountList.toJSONString());
-            file.close();
-            return accountToReturn;
-        } catch (Exception e) {
-            e.printStackTrace();
+        if (existsAccount(username)){
+            return null;
         }
-        return null;
+        else {
+            JSONParser parser = new JSONParser();
+
+            try {
+                FileReader reader = new FileReader(ACCOUNTS_JSON_FILE_PATH);
+                Object obj = parser.parse(reader);
+                JSONArray accountList = (JSONArray) obj;
+                reader.close();
+                int last_id = JsonArrayUtils.getLastID(accountList) + 1;
+
+                JSONObject newAccount = new JSONObject();
+                newAccount.put("username", username);
+                newAccount.put("password", password);
+                newAccount.put("id", last_id);
+                newAccount.put("account_type", false);
+                accountList.add(newAccount);
+
+                Account accountToReturn = new Account(username, password, last_id, false);
+
+                FileWriter file = new FileWriter(ACCOUNTS_JSON_FILE_PATH);
+                file.write(accountList.toJSONString());
+                file.close();
+                return accountToReturn;
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
     }
 
     public boolean existsAccount(String username)
