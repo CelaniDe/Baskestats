@@ -26,7 +26,6 @@ public class TeamCRUD
 
             for(int i = 0; i < teamList.size(); i++)
             {
-//                teamList
                 JSONObject teamObject = (JSONObject) teamList.get(i);
                 String name = (String) teamObject.get("name");
                 String city = (String) teamObject.get("city");
