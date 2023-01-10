@@ -10,19 +10,19 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import model.Player;
 public class PlayerCRUD {
-    private File file = new File("src/json_data/players.json");
     private static String PLAYERS_JSON_FILE_PATH = "src/json_data/players.json";
     public List<Player> getPlayers() {
         JSONParser parser = new JSONParser();
 
         try {
-            Object obj = parser.parse(new FileReader(file));
+            Object obj = parser.parse(new FileReader(PLAYERS_JSON_FILE_PATH));
 
             JSONArray playerList = (JSONArray) obj;
             List<Player> players = new ArrayList<>();
 
             for (int i = 0; i < playerList.size(); i++) {
                 JSONObject playerObject = (JSONObject) playerList.get(i);
+                System.out.println(playerObject);
                 String name = (String) playerObject.get("name");
                 long age = (long) playerObject.get("age");
                 long height = (long) playerObject.get("height");
@@ -67,7 +67,39 @@ public class PlayerCRUD {
                 e.printStackTrace();
             }
         }
-
     }
+    public void deletePlayers(List<Integer> player_ids)
+    {
+        JSONParser parser = new JSONParser();
+        try
+        {
+            FileReader reader = new FileReader(PLAYERS_JSON_FILE_PATH);
+            Object obj = parser.parse(reader);
+            JSONArray playerList = (JSONArray) obj;
+
+            for(int player : player_ids)
+            {
+                for(int i = 0; i < playerList.size(); i++)
+                {
+                    JSONObject playerObject = (JSONObject) playerList.get(i);
+                    int id = (int)((long) playerObject.get("id"));
+                    if(id == player)
+                    {
+                        playerList.remove(i);
+                    }
+                }
+            }
+
+            FileWriter file = new FileWriter(PLAYERS_JSON_FILE_PATH);
+            file.write(playerList.toJSONString());
+            file.close();
+
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+    }
+
 
 }
