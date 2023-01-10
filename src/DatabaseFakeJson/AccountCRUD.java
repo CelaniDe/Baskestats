@@ -55,15 +55,16 @@ public class AccountCRUD
             Object obj = parser.parse(reader);
             JSONArray accountList = (JSONArray) obj;
             reader.close();
+            int last_id = JsonArrayUtils.getLastID(accountList) + 1;
 
             JSONObject newAccount = new JSONObject();
             newAccount.put("username",username);
             newAccount.put("password", password);
-            newAccount.put("id", JsonArrayUtils.getLastID(accountList) + 1);
+            newAccount.put("id", last_id);
             newAccount.put("account_type", false);
             accountList.add(newAccount);
 
-            Account accountToReturn = new Account(username,password,JsonArrayUtils.getLastID(accountList) + 1,false);
+            Account accountToReturn = new Account(username,password,last_id,false);
 
             FileWriter file = new FileWriter(ACCOUNTS_JSON_FILE_PATH);
             file.write(accountList.toJSONString());
