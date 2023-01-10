@@ -10,5 +10,11 @@
     "password" : "654321",
     "id" : 1,
     "account_type": true
+  },
+  {
+    "username" : "Makis",
+    "password" : "112233",
+    "id" : 2,
+    "account_type": false
   }
 ]
