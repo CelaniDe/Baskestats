@@ -9,9 +9,11 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import model.Player;
+
 public class PlayerCRUD {
     private static String PLAYERS_JSON_FILE_PATH = "src/json_data/players.json";
-    public List<Player> getPlayers() {
+    public List<Player> getPlayers()
+    {
         JSONParser parser = new JSONParser();
 
         try {
@@ -39,6 +41,7 @@ public class PlayerCRUD {
         }
         return null;
     }
+
     public void insertPlayers(List<Player> players) {
         {
             JSONParser parser = new JSONParser();

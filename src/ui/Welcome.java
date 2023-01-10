@@ -1,6 +1,8 @@
 package ui;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Welcome extends JFrame
 {
@@ -19,5 +21,13 @@ public class Welcome extends JFrame
         setResizable(false);
         setSize(420,420);
         setVisible(true);
+        loginButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame frame = new Login();
+                dispose();
+
+            }
+        });
     }
 }
