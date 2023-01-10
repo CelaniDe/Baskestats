@@ -10,7 +10,7 @@ public class Account {
         this.username = username;
         this.password = password;
         this.id = id;
-        this.account_type = account_type;
+        this.account_type = account_type; // false for normal user, true for admin user
     }
 
     public Account() {
