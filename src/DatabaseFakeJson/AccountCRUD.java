@@ -91,7 +91,7 @@ public class AccountCRUD
                 String nameFromJson = (String) accountObject.get("username");
                 if(nameFromJson.equals(username))
                 {
-                    return false;
+                    return true;
                 }
             }
         }
@@ -99,6 +99,6 @@ public class AccountCRUD
         {
             e.printStackTrace();
         }
-        return true;
+        return false;
     }
 }
