@@ -1,5 +1,6 @@
 package dao;
 
+import DatabaseFakeJson.AccountCRUD;
 import model.Account;
 
 public class ClientDAOImpl implements ClientDAO{
@@ -21,6 +22,8 @@ public class ClientDAOImpl implements ClientDAO{
 
     @Override
     public Account getAccount(String username, String password) {
-        return null;
+        AccountCRUD accountCRUD = new AccountCRUD();
+        Account loggedIn = accountCRUD.getAccount(username,password);
+        return loggedIn;
     }
 }
