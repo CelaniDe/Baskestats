@@ -1,0 +1,14 @@
+[
+  {
+    "username" : "Giannhs",
+    "password" : "123456",
+    "id" : 0,
+    "account_type": true
+  },
+  {
+    "username" : "Bil",
+    "password" : "654321",
+    "id" : 1,
+    "account_type": true
+  }
+]
