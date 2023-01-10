@@ -1,18 +1,12 @@
 package ui;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 
 public class News extends JFrame{
     private JPanel newsPanel;
     private JLabel newsLabel;
-    private JButton button1;
-    private JLabel thirdNewsImg;
-    private JLabel firstNewsImg;
-    private JLabel secondNewsImg;
-    private JLabel fourthNewsImg;
-    private JLabel fifthNewsImg;
-    private JLabel sixthNewsImg;
-    private JLabel seventhNewsImg;
+    private JTable table1;
 
     public News(){
         setContentPane(newsPanel);
@@ -21,5 +15,14 @@ public class News extends JFrame{
         setResizable(false);
         setSize(500,500);
         setVisible(true);
+
+        String[][] data = {
+                { "Lorem Ipsum is simply dummy text of the printing and typesetting industry. \n Lorem Ipsum is simply dummy text of the printing and typesetting industry."},
+        };
+
+        String[] columnNames = { "News"};
+
+        DefaultTableModel model = new DefaultTableModel(data, columnNames);
+        table1.setModel(model);
     }
 }
