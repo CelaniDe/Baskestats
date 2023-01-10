@@ -24,12 +24,18 @@ public class AccountCRUD
 
             for(int i = 0; i < accountsList.size(); i++)
             {
+
                 JSONObject accountObject = (JSONObject) accountsList.get(i);
                 String nameFromJson = (String) accountObject.get("username");
                 String passwordFromJson = (String) accountObject.get("password");
                 long idFromJson = (long) accountObject.get("id");
                 boolean accountTypeFromJson = (boolean) accountObject.get("account_type");
-                if(nameFromJson == username && password == passwordFromJson)
+                System.out.println("nameFromJson -> " + nameFromJson);
+                System.out.println("passwordFromJson -> " + passwordFromJson);
+
+                System.out.println("namePassed -> " + username);
+                System.out.println("passwordPassed -> " + password);
+                if(nameFromJson.equals(username)  && password.equals(passwordFromJson))
                 {
                     return new Account(nameFromJson,passwordFromJson,(int) idFromJson,accountTypeFromJson);
                 }
