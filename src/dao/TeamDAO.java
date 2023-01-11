@@ -8,4 +8,5 @@ public interface TeamDAO
      public void deleteTeam();
      public void addTeam();
      public Team[] getTeams();
+     public String getTeamNameById(int id);
 }
