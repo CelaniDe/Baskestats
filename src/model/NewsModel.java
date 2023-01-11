@@ -1,17 +1,22 @@
 package model;
 
-public class News {
+public class NewsModel {
     private String title;
     private String description;
     private int id;
 
-    public News(String title, String description, int id) {
+    public NewsModel(String title, String description, int id) {
         this.title = title;
         this.description = description;
         this.id = id;
     }
 
-    public News() {
+    public NewsModel(String title, String description) {
+        this.title = title;
+        this.description = description;
+    }
+
+    public NewsModel() {
     }
 
     public String getTitle() {

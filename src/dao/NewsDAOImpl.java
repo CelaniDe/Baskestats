@@ -1,7 +1,7 @@
 package dao;
 
 import DatabaseFakeJson.NewsCRUD;
-import model.News;
+import model.NewsModel;
 
 import java.util.List;
 
@@ -14,7 +14,7 @@ public class NewsDAOImpl implements NewsDAO {
     }
 
     @Override
-    public void addNews(List<News> newsL) {
+    public void addNews(List<NewsModel> newsL) {
         NewsCRUD newsCRUD = new NewsCRUD();
         newsCRUD.addNews(newsL);
     }

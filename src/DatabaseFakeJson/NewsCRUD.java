@@ -1,6 +1,6 @@
 package DatabaseFakeJson;
 
-import model.News;
+import model.NewsModel;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -44,7 +44,7 @@ public class NewsCRUD {
             e.printStackTrace();
         }
     }
-    public void addNews(List<News> newsL) {
+    public void addNews(List<NewsModel> newsL) {
         {
             JSONParser parser = new JSONParser();
             try
@@ -54,7 +54,7 @@ public class NewsCRUD {
                 JSONArray newsList = (JSONArray) obj;
                 reader.close();
 
-                for (News news : newsL) {
+                for (NewsModel news : newsL) {
                     JSONObject newNews = new JSONObject();
                     newNews.put("id", JsonArrayUtils.getLastID(newsList)+1);
                     newNews.put("title", news.getTitle());

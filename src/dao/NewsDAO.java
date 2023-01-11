@@ -1,10 +1,10 @@
 package dao;
 
-import model.News;
+import model.NewsModel;
 
 import java.util.List;
 
 public interface NewsDAO {
     public void deleteNews(List<Integer> news_ids);
-    public void addNews(List<News> newsL);
+    public void addNews(List<NewsModel> newsL);
 }
