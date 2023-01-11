@@ -1,6 +1,8 @@
 package ui;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class WelcomeScreen extends JFrame{
     private JPanel Master;
@@ -20,7 +22,23 @@ public class WelcomeScreen extends JFrame{
         setTitle("Welcome");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
-        setSize(420, 420);
+        setSize(1000, 1000);
         setVisible(true);
+
+        LoginButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame frame = new Login();
+                dispose();
+
+            }
+        });
+        CreateAccountButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame frame = new Register();
+                dispose();
+            }
+        });
     }
 }
