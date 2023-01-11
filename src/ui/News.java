@@ -17,10 +17,10 @@ public class News extends JFrame{
         setVisible(true);
 
         String[][] data = {
-                { "Lorem Ipsum is simply dummy text of the printing and typesetting industry. \n Lorem Ipsum is simply dummy text of the printing and typesetting industry."},
+                { "Makis o oreos! ","Lorem Ipsum is simply dummy text of the printing and typesetting industry. \n Lorem Ipsum is simply dummy text of the printing and typesetting industry."},
         };
 
-        String[] columnNames = { "News"};
+        String[] columnNames = { "Title" , "Description"};
 
         DefaultTableModel model = new DefaultTableModel(data, columnNames);
         table1.setModel(model);
