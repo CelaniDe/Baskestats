@@ -1,6 +1,9 @@
 package dao;
 
+import DatabaseFakeJson.TeamCRUD;
 import model.Team;
+
+import java.util.List;
 
 public class TeamDAOImpl implements TeamDAO
 {
@@ -20,9 +23,11 @@ public class TeamDAOImpl implements TeamDAO
     }
 
     @Override
-    public Team[] getTeams() {
-        return new Team[0];
+    public List<Team> getTeams() {
+        TeamCRUD teamCRUD = new TeamCRUD();
+        return teamCRUD.getTeams();
     }
+
 
     @Override
     public String getTeamNameById(int id) {
