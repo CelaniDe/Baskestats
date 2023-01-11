@@ -1,0 +1,18 @@
+[
+  {
+    "id" : 0,
+    "title" : "LAMELO BOMB TRANSFER",
+    "description" : "The news of the transfer of Lamelo Ball to Miami Heat have upset the fans"
+  },
+  {
+    "id" : 1,
+    "title" : "Christmas game Lakers - Warriors",
+    "description" : "The matchup everyone's been waiting for, Lebron James vs Stephen Curry"
+  },
+  {
+    "id" : 2,
+    "title" : "Christmas game Suns - Mavericks",
+    "description" : "Are the suns with Booker on the bench going to hold their ground?"
+  }
+
+]

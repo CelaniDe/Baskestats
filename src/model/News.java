@@ -3,10 +3,12 @@ package model;
 public class News {
     private String title;
     private String description;
+    private int id;
 
-    public News(String title, String description) {
+    public News(String title, String description, int id) {
         this.title = title;
         this.description = description;
+        this.id = id;
     }
 
     public News() {
@@ -26,5 +28,13 @@ public class News {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
