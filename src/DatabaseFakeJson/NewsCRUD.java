@@ -26,7 +26,7 @@ public class NewsCRUD {
                 for(int i = 0; i < newsList.size(); i++)
                 {
                     JSONObject newsObject = (JSONObject) newsList.get(i);
-                    int id = (int)(newsObject.get("id"));
+                    int id = (int)(long)(newsObject.get("id"));
                     if(id == news)
                     {
                         newsList.remove(i);
