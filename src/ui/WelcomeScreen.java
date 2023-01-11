@@ -29,7 +29,6 @@ public class WelcomeScreen extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 JFrame frame = new Login();
                 dispose();
-
             }
         });
         CreateAccountButton.addActionListener(new ActionListener() {
