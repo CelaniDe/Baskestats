@@ -24,7 +24,6 @@ public class WelcomeScreen extends JFrame{
         setResizable(false);
         setSize(1000, 1000);
         setVisible(true);
-
         LoginButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
