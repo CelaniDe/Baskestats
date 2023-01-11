@@ -1,15 +1,22 @@
 package model;
 
-public class News {
+public class NewsModel {
     private String title;
     private String description;
+    private int id;
 
-    public News(String title, String description) {
+    public NewsModel(String title, String description, int id) {
+        this.title = title;
+        this.description = description;
+        this.id = id;
+    }
+
+    public NewsModel(String title, String description) {
         this.title = title;
         this.description = description;
     }
 
-    public News() {
+    public NewsModel() {
     }
 
     public String getTitle() {
@@ -26,5 +33,13 @@ public class News {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

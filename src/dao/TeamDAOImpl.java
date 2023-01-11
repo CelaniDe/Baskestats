@@ -23,4 +23,9 @@ public class TeamDAOImpl implements TeamDAO
     public Team[] getTeams() {
         return new Team[0];
     }
+
+    @Override
+    public String getTeamNameById(int id) {
+        return null;
+    }
 }
