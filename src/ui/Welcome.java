@@ -7,11 +7,8 @@ import java.awt.event.ActionListener;
 public class Welcome extends JFrame
 {
     private JPanel panel1;
-    private JButton loginButton;
-    private JButton createAccountButton;
-    private JLabel welcomeText;
-    private JLabel loginText;
-    private JLabel CreateAccountText;
+    private JButton LoginButton;
+    private JButton CreateAccountButton;
 
     public Welcome()
     {
@@ -21,7 +18,7 @@ public class Welcome extends JFrame
         setResizable(false);
         setSize(420,420);
         setVisible(true);
-        loginButton.addActionListener(new ActionListener() {
+        LoginButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFrame frame = new Login();
@@ -30,7 +27,7 @@ public class Welcome extends JFrame
             }
         });
 
-        createAccountButton.addActionListener(new ActionListener() {
+        CreateAccountButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFrame frame = new Register();
