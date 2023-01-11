@@ -1,0 +1,30 @@
+[
+    {
+        "team_id": 0,
+        "number_of_matches" : 10,
+        "wins" : 5,
+        "loses" : 5,
+        "points" : 50
+    },
+    {
+        "team_id": 1,
+        "number_of_matches" : 12,
+        "wins" : 5,
+        "loses" : 7,
+        "points" : 70
+    },
+    {
+        "team_id": 2,
+        "number_of_matches" : 20,
+        "wins" : 15,
+        "loses" : 5,
+        "points" : 100
+    },
+    {
+        "team_id": 3,
+        "number_of_matches" : 2,
+        "wins" : 0,
+        "loses" : 0,
+        "points" : 30
+    }
+]
