@@ -43,6 +43,17 @@ public class TeamCRUD
         return teams;
     }
 
+    public List<Team> getTeams(String teamNamePassed)
+    {
+        List<Team> allTeams = getTeams();
+        List<Team> matchedTeams = new ArrayList<>();
+        for(Team team : allTeams)
+            if(team.getName().contains(teamNamePassed))
+                matchedTeams.add(team);
+
+        return matchedTeams;
+    }
+
     public void insertTeams(List<Team> teams)
     {
         try

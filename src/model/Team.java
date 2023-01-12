@@ -65,4 +65,15 @@ public class Team
     {
         this.CEO = CEO;
     }
+
+    @Override
+    public String toString() {
+        return "Team{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", city='" + city + '\'' +
+                ", founded=" + founded +
+                ", CEO='" + CEO + '\'' +
+                '}';
+    }
 }

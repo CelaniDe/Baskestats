@@ -28,6 +28,12 @@ public class TeamDAOImpl implements TeamDAO
         return teamCRUD.getTeams();
     }
 
+    @Override
+    public List<Team> getTeams(String teamNamePassed) {
+        TeamCRUD teamCRUD = new TeamCRUD();
+        return teamCRUD.getTeams(teamNamePassed);
+    }
+
 
     @Override
     public String getTeamNameById(int id) {
