@@ -15,7 +15,7 @@ public class AccountCRUD
 {
     private static final String ACCOUNTS_JSON_FILE_PATH = "src/json_data/accounts.json";
 
-    // Gets 2 string as username and password and returns the matched account. If there is no account
+    // Gets 2 strings as username and password and returns the matched account. If there is no account
     // that matches, it returns null
     public Account getAccount(String username, String password)
     {
@@ -51,7 +51,7 @@ public class AccountCRUD
         return null;
     }
 
-    //Gets username and password and created a new client account
+    //Gets username and password and creates a new client account
     public Account insertAccount(String username, String password) {
         if (existsAccount(username)){
             return null;
@@ -87,7 +87,7 @@ public class AccountCRUD
     }
 
     //Gets a string as username and returns true if there is an account with that username and
-    // false if the is not
+    // false if there is not
     public boolean existsAccount(String username)
     {
         JSONParser parser = new JSONParser();

@@ -46,7 +46,7 @@ public class NewsCRUD {
         }
     }
 
-    //Gets a list of news as parameter and adds those newsv in json form in the json file
+    //Gets a list of news as parameter and adds those news in json form in the json file
     public void addNews(List<NewsModel> newsL) {
         {
             JSONParser parser = new JSONParser();
