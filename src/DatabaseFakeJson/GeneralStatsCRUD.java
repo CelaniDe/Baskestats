@@ -14,6 +14,7 @@ public class GeneralStatsCRUD
 {
     private static String GENERAL_STATS_JSON_FILE_PATH = "src/json_data/leagueStanding.json";
 
+    //Gets an int as team_id and returns all stats of the team with that id
     public GeneralStats getGeneralStatsForTeam(int team_id)
     {
         JSONParser parser = new JSONParser();

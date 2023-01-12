@@ -12,11 +12,14 @@ import java.util.List;
 
 public class JsonArrayUtils
 {
+    //Used to get the last id from a json array
     public static int getLastID(JSONArray jsonArray)
     {
         long lastID = (long) ((JSONObject) jsonArray.get(jsonArray.size() -1 )).get("id");
         return (int) lastID;
     }
+
+    //Returns a specified integer attribute of any object based on its json path and id
     public static int getIntAttributebyId(long id, String filePath, String attribute)
     {
         JSONParser parser = new JSONParser();
@@ -41,6 +44,8 @@ public class JsonArrayUtils
         }
         return -1;
     }
+
+    //Returns a specified String attribute of any object based on its json path and id
     public static String getStringAttributebyId(long id, String filePath, String attribute)
     {
         JSONParser parser = new JSONParser();

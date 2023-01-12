@@ -15,6 +15,7 @@ public class TeamCRUD
 {
     private static String TEAMS_JSON_FILE_PATH = "src/json_data/teams.json";
 
+    //Returns a team list of all the teams in the teams.json
     public List<Team> getTeams()
     {
         JSONParser parser = new JSONParser();
@@ -43,6 +44,7 @@ public class TeamCRUD
         return teams;
     }
 
+    //Gets a string as parameter and returns a player list of the teams that match that string in their name
     public List<Team> getTeams(String teamNamePassed)
     {
         List<Team> allTeams = getTeams();
@@ -54,6 +56,7 @@ public class TeamCRUD
         return matchedTeams;
     }
 
+    //Gets a list of teams as parameter and adds those teams in json form in the json file
     public void insertTeams(List<Team> teams)
     {
         try
@@ -86,6 +89,7 @@ public class TeamCRUD
 
     }
 
+    //Gets a list of integers and deletes the teams with those ids
     public void deleteTeams(List<Integer> teams_ids)
     {
         JSONParser parser = new JSONParser();

@@ -13,6 +13,8 @@ import model.Player;
 
 public class PlayerCRUD {
     private static String PLAYERS_JSON_FILE_PATH = "src/json_data/players.json";
+
+    //Returns all players in the json file as a player list
     public List<Player> getPlayers()
     {
         JSONParser parser = new JSONParser();
@@ -42,6 +44,8 @@ public class PlayerCRUD {
         }
         return null;
     }
+
+    //Gets a string as parameter and returns a player list of the players that match that string in their name
     public List<Player> getPlayers(String playerNamePassed)
     {
         List<Player> allPlayers = getPlayers();
@@ -53,7 +57,7 @@ public class PlayerCRUD {
         return matchedPlayers;
     }
 
-
+    //Gets a list of players as parameter and adds those players in json form in the json file
     public void insertPlayers(List<Player> players) {
         {
             JSONParser parser = new JSONParser();
@@ -84,6 +88,7 @@ public class PlayerCRUD {
             }
         }
     }
+    //Gets a list of integers and deletes the players with those ids
     public void deletePlayers(List<Integer> player_ids)
     {
         JSONParser parser = new JSONParser();
@@ -117,6 +122,7 @@ public class PlayerCRUD {
         }
     }
 
+    //Gets int as parameter and returns players that have that team id
     public List<Player> getPlayersByTeamID(int team_id)
     {
         List<Player> allPlayers = getPlayers();
