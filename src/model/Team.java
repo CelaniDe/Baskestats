@@ -2,6 +2,7 @@ package model;
 
 public class Team
 {
+    private int id;
     private String name;
     private String city;
     private long founded;
@@ -9,11 +10,20 @@ public class Team
 
     public Team() {}
 
-    public Team(String name, String city, long founded, String CEO) {
+    public Team(int id,String name, String city, long founded, String CEO) {
+        this.id = id;
         this.name = name;
         this.city = city;
         this.founded = founded;
         this.CEO = CEO;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName()

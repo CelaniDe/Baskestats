@@ -27,11 +27,12 @@ public class TeamCRUD
             for(int i = 0; i < teamList.size(); i++)
             {
                 JSONObject teamObject = (JSONObject) teamList.get(i);
+                int id = (int)((long) teamObject.get("id"));
                 String name = (String) teamObject.get("name");
                 String city = (String) teamObject.get("city");
                 long founded = (long) teamObject.get("founded");
                 String ceo = (String) teamObject.get("CEO");
-                Team newTeam = new Team(name,city,founded,ceo);
+                Team newTeam = new Team(id,name,city,founded,ceo);
                 teams.add(newTeam);
             }
         }
