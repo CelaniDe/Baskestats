@@ -4,12 +4,14 @@ public class Match {
 
     public Match() {}
 
-    public Match(String datetime, String stadium, int id) {
-        this.datetime = datetime;
+    public Match(String date, String stadium, int id, String time) {
+        this.date = date;
         this.stadium = stadium;
         this.id = id;
+        this.time = time;
     }
-    private String datetime;
+    private String date;
+    private String time;
     private String stadium;
     private int id;
 
@@ -22,12 +24,20 @@ public class Match {
         this.stadium = stadium;
     }
 
-    public String getDatetime() {
-        return datetime;
+    public String getTime() {
+        return time;
     }
 
-    public void setDatetime(String datetime) {
-        this.datetime = datetime;
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String datetime) {
+        this.date = date;
     }
 
     public int getId() {

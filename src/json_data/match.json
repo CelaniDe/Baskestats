@@ -1,7 +1,8 @@
 [
   {
     "id" : 0,
-    "datetime" : "10/2/2023" ,
+    "date" : "8/2/2023" ,
+    "time" : "20:00",
     "stadium" : "Madison Square Garden"
   },
   {
@@ -13,6 +14,12 @@
   {
     "id" : 2,
     "date" : "10/2/2023" ,
+    "time" : "15:00",
+    "stadium" : "Amyway Center"
+  },
+  {
+    "id" : 3,
+    "date" : "11/2/2023" ,
     "time" : "15:00",
     "stadium" : "Amyway Center"
   }
