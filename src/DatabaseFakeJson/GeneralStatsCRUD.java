@@ -13,6 +13,7 @@ import java.util.List;
 public class GeneralStatsCRUD
 {
     private static String GENERAL_STATS_JSON_FILE_PATH = "src/json_data/leagueStanding.json";
+    private static String PLAYER_STATS_JSON_FILE_PATH = "src/json_data/players_stats.json";
 
     //Gets an int as team_id and returns all stats of the team with that id
     public GeneralStats getGeneralStatsForTeam(int team_id)
@@ -34,6 +35,34 @@ public class GeneralStatsCRUD
                     int loses = (int)((long) generalStatsObject.get("loses"));
                     int points = (int)((long) generalStatsObject.get("points"));
                     return new GeneralStats(id,number_of_matches,wins,loses,points);
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+    public GeneralStats getGeneralStatsForPlayer(int player_id)
+    {
+        JSONParser parser = new JSONParser();
+        try
+        {
+            Object obj = parser.parse(new FileReader(PLAYER_STATS_JSON_FILE_PATH));
+            JSONArray playerList = (JSONArray) obj;
+
+            for(int i = 0; i < playerList.size(); i++)
+            {
+                JSONObject generalStatsObject = (JSONObject) playerList.get(i);
+                int id = (int)((long) generalStatsObject.get("id"));
+                if(id == player_id)
+                {
+                    int points = (int)((long) generalStatsObject.get("points"));
+                    int assists = (int)((long) generalStatsObject.get("assists"));
+                    int shots = (int)((long) generalStatsObject.get("shots"));
+                    return new GeneralStats(id,points,assists,shots);
                 }
             }
         }

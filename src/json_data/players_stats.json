@@ -1,0 +1,26 @@
+[
+    {
+        "id" : 0,
+        "points" : 22,
+        "assists" : 10,
+        "shots": 14
+    },
+    {
+        "id" : 1,
+        "points" : 30,
+        "assists" : 8,
+        "shots": 40
+    } ,
+    {
+        "id" : 2,
+        "points" : 13,
+        "assists" : 6,
+        "shots": 6
+    },
+    {
+        "id" : 3,
+        "points" : 44,
+        "assists" : 21,
+        "shots": 31
+    }
+]

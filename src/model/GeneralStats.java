@@ -2,27 +2,53 @@ package model;
 
 public class GeneralStats
 {
-    private int team_id;
+    private int id;
     private int number_of_matches;
     private int wins;
     private int loses;
     private int points;
+    private int assists;
+    private int shots;
 
-    public GeneralStats(int team_id,int number_of_matches, int wins, int loses, int points) {
-        this.team_id = team_id;
+    public GeneralStats(int id, int points, int assists, int shots) {
+        this.id = id;
+        this.points = points;
+        this.assists = assists;
+        this.shots = shots;
+    }
+
+    public GeneralStats(int id, int number_of_matches, int wins, int loses, int points) {
+        this.id = id;
         this.number_of_matches = number_of_matches;
         this.wins = wins;
         this.loses = loses;
         this.points = points;
     }
 
-    public int getTeam_id() {
-        return team_id;
+    public int getId() {
+        return id;
     }
 
-    public void setTeam_id(int team_id) {
-        this.team_id = team_id;
+    public void setId(int id) {
+        this.id = id;
     }
+
+    public int getAssists() {
+        return assists;
+    }
+
+    public void setAssists(int assists) {
+        this.assists = assists;
+    }
+
+    public int getShots() {
+        return shots;
+    }
+
+    public void setShots(int shots) {
+        this.shots = shots;
+    }
+
 
     public int getNumber_of_matches() {
         return number_of_matches;
@@ -56,14 +82,22 @@ public class GeneralStats
         this.points = points;
     }
 
-    @Override
-    public String toString() {
+
+    public String toStringTeam() {
         return "GeneralStats{" +
-                "team_id=" + team_id +
+                "id=" + id +
                 ", number_of_matches=" + number_of_matches +
                 ", wins=" + wins +
                 ", loses=" + loses +
+                '}';
+    }
+
+    public String toStringPlayer() {
+        return "GeneralStats{" +
+                "id=" + id +
                 ", points=" + points +
+                ", assists=" + assists +
+                ", shots=" + shots +
                 '}';
     }
 }
