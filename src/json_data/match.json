@@ -1,0 +1,19 @@
+[
+  {
+    "id" : 0,
+    "datetime" : "10/2/2023" ,
+    "stadium" : "Madison Square Garden"
+  },
+  {
+    "id" : 1,
+    "date" : "10/2/2023" ,
+    "time" : "15:00",
+    "stadium" : "Paycom Center"
+  },
+  {
+    "id" : 2,
+    "date" : "10/2/2023" ,
+    "time" : "15:00",
+    "stadium" : "Amyway Center"
+  }
+]
