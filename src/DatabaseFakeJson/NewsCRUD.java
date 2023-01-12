@@ -44,6 +44,7 @@ public class NewsCRUD {
             e.printStackTrace();
         }
     }
+
     public void addNews(List<NewsModel> newsL) {
         {
             JSONParser parser = new JSONParser();

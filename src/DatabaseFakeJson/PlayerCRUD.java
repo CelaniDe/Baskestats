@@ -106,5 +106,16 @@ public class PlayerCRUD {
         }
     }
 
+    public List<Player> getPlayersByTeamID(int team_id)
+    {
+        List<Player> allPlayers = getPlayers();
+        List<Player> playersOnTeam = new ArrayList<>();
+        for(Player player : allPlayers)
+            if(player.getTeam_id() == team_id)
+                playersOnTeam.add(player);
+
+        return playersOnTeam;
+    }
+
 
 }
