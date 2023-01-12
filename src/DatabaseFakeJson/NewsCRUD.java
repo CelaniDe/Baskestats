@@ -12,6 +12,7 @@ import java.util.List;
 public class NewsCRUD {
     private static String NEWS_JSON_FILE_PATH = "src/json_data/news.json";
 
+    //Gets a list of integers and deletes the news with those ids
     public void deleteNews(List<Integer> news_ids)
     {
         JSONParser parser = new JSONParser();
@@ -45,6 +46,7 @@ public class NewsCRUD {
         }
     }
 
+    //Gets a list of news as parameter and adds those news in json form in the json file
     public void addNews(List<NewsModel> newsL) {
         {
             JSONParser parser = new JSONParser();
