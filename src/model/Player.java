@@ -11,7 +11,7 @@ public class Player
         Nationality = nationality;
     }
 
-    public Player(String name, long age, long height, long weight, String nationality, int id) {
+    public Player(String name, long age, long height, long weight, String nationality, int id, int team_id ) {
         this.name = name;
         this.age = age;
         this.height = height;
@@ -29,6 +29,7 @@ public class Player
     private long weight;
     private String Nationality;
     private int id;
+    private int team_id;
 
 
     public String getName() {
@@ -77,6 +78,14 @@ public class Player
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getTeam_id() {
+        return team_id;
+    }
+
+    public void setTeam_id(int team_id) {
+        this.team_id = team_id;
     }
 }
 

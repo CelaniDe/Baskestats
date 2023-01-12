@@ -60,6 +60,7 @@ public class PlayerCRUD {
                     newPlayer.put("height", player.getHeight());
                     newPlayer.put("weight", player.getWeight());
                     newPlayer.put("Nationality", player.getWeight());
+                    newPlayer.put("team_id", (int)player.getTeam_id());
                     playerList.add(newPlayer);
                 }
                 FileWriter file = new FileWriter(PLAYERS_JSON_FILE_PATH);

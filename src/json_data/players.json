@@ -5,7 +5,8 @@
     "age": 36,
     "height": 180,
     "weight": 250,
-    "nationality": "United States"
+    "nationality": "United States",
+    "team_id" : 1
   },
   {
     "id" : 1,
@@ -13,7 +14,8 @@
     "age": 33,
     "height": 190,
     "weight": 190,
-    "nationality": "United States"
+    "nationality": "United States",
+    "team_id" : 2
   },
   {
     "id" : 2,
@@ -21,7 +23,8 @@
     "age": 32,
     "height": 210,
     "weight": 240,
-    "nationality": "United States"
+    "nationality": "United States",
+    "team_id" : 2
   },
   {
     "id" : 3,
@@ -29,6 +32,7 @@
     "age": 31,
     "height": 220,
     "weight": 220,
-    "nationality": "United States"
+    "nationality": "United States",
+    "team_id" : 2
   }
 ]
