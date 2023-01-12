@@ -10,21 +10,29 @@ import model.Team;
 
 import javax.swing.*;
 import javax.swing.table.*;
-import java.awt.*;
 import java.util.List;
 
-public class LeagueStandingpanel extends JFrame {
-    private JPanel leaguepanel;
+public class LeagueStanding extends JFrame {
+    private JPanel Master;
+    private JPanel Navigation;
+    private JButton NavMatch;
+    private JButton NavLeague;
+    private JButton NavSearch;
+    private JButton NavNews;
+    private JButton NavHighlights;
+    private JPanel Header;
+    private JLabel LeagueTitle;
+    private JTable LeagueTable;
+    private JScrollPane LeagueTablePane;
     private JTable leagueStanding;
-    private JLabel leagueStandingLabel;
 
-    public LeagueStandingpanel()
+    public LeagueStanding()
     {
-        setContentPane(leaguepanel);
-        setTitle("League Standings");
+        setContentPane(Master);
+        setTitle("Welcome");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
-        setSize(500,500);
+        setSize(1000, 1000);
         setVisible(true);
 
         TeamDAO teamDAO = new TeamDAOImpl();
