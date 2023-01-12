@@ -30,8 +30,9 @@ public class PlayerCRUD {
                 long height = (long) playerObject.get("height");
                 long weight = (long) playerObject.get("weight");
                 String nationality = (String) playerObject.get("nationality");
+                int team_id = (int)((long)playerObject.get("team_id"));
 
-                Player player = new Player(name, age, height, weight, nationality);
+                Player player = new Player(name, age, height, weight, nationality,team_id);
                 players.add(player);
             }
             return players;

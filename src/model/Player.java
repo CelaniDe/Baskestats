@@ -11,6 +11,15 @@ public class Player
         Nationality = nationality;
     }
 
+    public Player(String name, long age, long height, long weight, String nationality, int team_id) {
+        this.name = name;
+        this.age = age;
+        this.height = height;
+        this.weight = weight;
+        Nationality = nationality;
+        this.team_id = team_id;
+    }
+
     public Player(String name, long age, long height, long weight, String nationality, int id, int team_id ) {
         this.name = name;
         this.age = age;
