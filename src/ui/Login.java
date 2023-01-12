@@ -9,17 +9,20 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Login extends JFrame {
-    private JPanel panel1;
-    private JLabel loginText;
-    private JLabel usernameText;
+    private JPanel Master;
+    private JLabel LoginTitle;
+    private JTextField UsernameField;
+    private JPasswordField PasswordField;
+    private JButton LoginButton;
+    private JLabel UsernamePrompt;
+    private JLabel PasswordPrompt;
     private JTextField usernameTextField;
-    private JLabel passwordText;
     private JPasswordField passwordPasswordField;
     private JButton loginButton;
     JFrame my_frame;
 
     public Login(){
-        setContentPane(panel1);
+        setContentPane(Master);
         my_frame = this;
         setTitle("Login");
         setResizable(false);
