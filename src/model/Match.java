@@ -47,4 +47,14 @@ public class Match {
     public void setId(int id) {
         this.id = id;
     }
+
+    @Override
+    public String toString() {
+        return "Match{" +
+                "date='" + date + '\'' +
+                ", time='" + time + '\'' +
+                ", stadium='" + stadium + '\'' +
+                ", id=" + id +
+                '}';
+    }
 }
