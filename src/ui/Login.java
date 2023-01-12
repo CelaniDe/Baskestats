@@ -29,7 +29,7 @@ public class Login extends JFrame {
         setSize(1000,1000);
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        loginButton.addActionListener(new ActionListener() {
+        LoginButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 ClientDAO clientDAO = new ClientDAOImpl();

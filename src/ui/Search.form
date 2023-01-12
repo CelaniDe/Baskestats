@@ -1,78 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="ui.PlayerProfile">
-  <grid id="27dc6" binding="Master" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="ui.Search">
+  <grid id="27dc6" binding="Master" layout-manager="GridLayoutManager" row-count="4" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="522" height="624"/>
+      <xy x="20" y="20" width="612" height="611"/>
     </constraints>
     <properties>
       <background color="-1"/>
     </properties>
     <border type="none"/>
     <children>
-      <grid id="49319" binding="Header" layout-manager="GridLayoutManager" row-count="4" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <grid id="4364b" binding="Navigation" layout-manager="GridLayoutManager" row-count="1" column-count="7" same-size-horizontally="false" same-size-vertically="false" hgap="0" vgap="0">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
-          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <background color="-10637195"/>
-        </properties>
-        <border type="none"/>
-        <children>
-          <component id="1bf94" class="javax.swing.JButton" binding="PlayerPhotoButton">
-            <constraints>
-              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <background color="-1"/>
-              <borderPainted value="false"/>
-              <contentAreaFilled value="false"/>
-              <focusPainted value="true"/>
-              <foreground color="-1"/>
-              <icon value="img/t1.jpeg"/>
-              <selected value="false"/>
-            </properties>
-          </component>
-          <component id="b1de" class="javax.swing.JLabel" binding="PlayerProfileTitle">
-            <constraints>
-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="2" fill="0" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <background color="-1"/>
-              <font size="35"/>
-              <foreground color="-1"/>
-              <text value="Player Profile"/>
-            </properties>
-          </component>
-          <component id="5a64" class="javax.swing.JLabel" binding="PlayerName">
-            <constraints>
-              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <background color="-1"/>
-              <font size="35"/>
-              <foreground color="-1"/>
-              <text value="Player Name"/>
-            </properties>
-          </component>
-          <component id="e501f" class="javax.swing.JLabel" binding="PlayerTeam">
-            <constraints>
-              <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <background color="-1"/>
-              <font size="25"/>
-              <foreground color="-1"/>
-              <text value="Player Team"/>
-            </properties>
-          </component>
-        </children>
-      </grid>
-      <grid id="dbc08" binding="Navigation" layout-manager="GridLayoutManager" row-count="1" column-count="7" same-size-horizontally="false" same-size-vertically="false" hgap="0" vgap="0">
-        <margin top="0" left="0" bottom="0" right="0"/>
-        <constraints>
-          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="2" fill="1" indent="0" use-parent-layout="false">
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="2" fill="1" indent="0" use-parent-layout="false">
             <minimum-size width="-1" height="100"/>
             <preferred-size width="-1" height="100"/>
             <maximum-size width="-1" height="100"/>
@@ -84,7 +25,7 @@
         </properties>
         <border type="none"/>
         <children>
-          <component id="38f88" class="javax.swing.JButton" binding="NavMatch">
+          <component id="5722f" class="javax.swing.JButton" binding="NavMatch">
             <constraints>
               <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -97,7 +38,7 @@
               <text value=""/>
             </properties>
           </component>
-          <component id="e151" class="javax.swing.JButton" binding="NavLeague">
+          <component id="6f4e9" class="javax.swing.JButton" binding="NavLeague">
             <constraints>
               <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -109,7 +50,7 @@
               <text value=""/>
             </properties>
           </component>
-          <component id="a0a35" class="javax.swing.JButton" binding="NavSearch">
+          <component id="b3219" class="javax.swing.JButton" binding="NavSearch">
             <constraints>
               <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -121,7 +62,7 @@
               <text value=""/>
             </properties>
           </component>
-          <component id="f09f" class="javax.swing.JButton" binding="NavNews">
+          <component id="852b" class="javax.swing.JButton" binding="NavNews">
             <constraints>
               <grid row="0" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -133,7 +74,7 @@
               <text value=""/>
             </properties>
           </component>
-          <component id="e6631" class="javax.swing.JButton" binding="NavHighlights">
+          <component id="4449" class="javax.swing.JButton" binding="NavHighlights">
             <constraints>
               <grid row="0" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -145,19 +86,19 @@
               <text value=""/>
             </properties>
           </component>
-          <hspacer id="97562">
+          <hspacer id="3e433">
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
           </hspacer>
-          <hspacer id="54963">
+          <hspacer id="dfd37">
             <constraints>
               <grid row="0" column="6" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
           </hspacer>
         </children>
       </grid>
-      <grid id="ffb49" binding="Mid" layout-manager="GridLayoutManager" row-count="5" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <grid id="3f483" binding="Header" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
           <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
@@ -167,53 +108,124 @@
         </properties>
         <border type="none"/>
         <children>
-          <component id="9e017" class="javax.swing.JLabel" binding="Info1">
+          <component id="c6d5d" class="javax.swing.JTextField" binding="textField1" default-binding="true">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-1"/>
+              <font size="25"/>
+            </properties>
+          </component>
+          <component id="14ecb" class="javax.swing.JButton" binding="SwitchSearchButton">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-1"/>
+              <font size="21"/>
+              <text value="Searching Players"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="c61d2" binding="Mid" layout-manager="GridLayoutManager" row-count="8" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-1"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="e7ffd" class="javax.swing.JLabel" binding="Result1">
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <font size="25"/>
-              <text value="Games played :"/>
+              <text value="Result1 :"/>
             </properties>
           </component>
-          <component id="429aa" class="javax.swing.JLabel" binding="Info2">
+          <component id="d68d9" class="javax.swing.JLabel" binding="Result2">
             <constraints>
               <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <font size="25"/>
-              <text value="Wins: "/>
+              <text value="Result2 :"/>
             </properties>
           </component>
-          <component id="fd0a4" class="javax.swing.JLabel" binding="Info3">
+          <component id="f6d21" class="javax.swing.JLabel" binding="Result3">
             <constraints>
               <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <font size="25"/>
-              <text value="Points :"/>
+              <text value="Result3 :"/>
             </properties>
           </component>
-          <component id="968c8" class="javax.swing.JLabel" binding="Info4">
+          <component id="bc633" class="javax.swing.JLabel" binding="Result4">
             <constraints>
               <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <font size="25"/>
-              <text value="Age :"/>
+              <text value="Result4 :"/>
             </properties>
           </component>
-          <component id="e667c" class="javax.swing.JLabel" binding="Info5">
+          <component id="8ecd0" class="javax.swing.JLabel" binding="Result5">
             <constraints>
               <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <font size="25"/>
-              <text value="Total Transfers :"/>
+              <text value="Result5 :"/>
+            </properties>
+          </component>
+          <component id="7c309" class="javax.swing.JLabel" binding="Result6">
+            <constraints>
+              <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font size="25"/>
+              <text value="Result6 :"/>
+            </properties>
+          </component>
+          <component id="f2174" class="javax.swing.JLabel" binding="Result7">
+            <constraints>
+              <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font size="25"/>
+              <text value="Result7 :"/>
+            </properties>
+          </component>
+          <component id="e2b2e" class="javax.swing.JLabel" binding="Result8">
+            <constraints>
+              <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font size="25"/>
+              <text value="Result8 :"/>
             </properties>
           </component>
         </children>
       </grid>
+      <component id="18564" class="javax.swing.JLabel" binding="SearchTitle">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="2" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-1"/>
+          <font size="45"/>
+          <foreground color="-12828863"/>
+          <text value="Search"/>
+        </properties>
+      </component>
     </children>
   </grid>
 </form>

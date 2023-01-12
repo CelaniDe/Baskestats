@@ -3,20 +3,15 @@ package ui;
 import javax.swing.*;
 
 public class Match extends  JFrame {
-    private JPanel match;
-    private JButton pastButton;
-    private JButton presentButton;
-    private JButton futureButton;
-    private JLabel teamIconDateTeamLabel;
-    private JLabel LALakers101Label;
+    private JPanel Master;
 
     public Match()
     {
-        setContentPane(match);
+        setContentPane(Master);
         setTitle("Welcome");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
-        setSize(600,600);
+        setSize(1000, 1000);
         setVisible(true);
     }
 }

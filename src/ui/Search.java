@@ -2,27 +2,29 @@ package ui;
 
 import javax.swing.*;
 
-public class PlayerProfile extends JFrame {
+public class Search extends JFrame {
     private JPanel Master;
-    private JPanel Header;
-    private JButton PlayerPhotoButton;
-    private JLabel PlayerProfileTitle;
-    private JLabel PlayerName;
     private JPanel Navigation;
     private JButton NavMatch;
     private JButton NavLeague;
     private JButton NavSearch;
     private JButton NavNews;
     private JButton NavHighlights;
+    private JPanel Header;
+    private JLabel SearchTitle;
     private JPanel Mid;
-    private JLabel Info1;
-    private JLabel Info2;
-    private JLabel Info3;
-    private JLabel Info4;
-    private JLabel Info5;
-    private JLabel PlayerTeam;
+    private JLabel Result1;
+    private JLabel Result2;
+    private JLabel Result3;
+    private JLabel Result4;
+    private JLabel Result5;
+    private JTextField textField1;
+    private JButton SwitchSearchButton;
+    private JLabel Result6;
+    private JLabel Result7;
+    private JLabel Result8;
 
-    public PlayerProfile()
+    public Search()
     {
         setContentPane(Master);
         setTitle("Welcome");

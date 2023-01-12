@@ -33,7 +33,7 @@ public class Register extends JFrame{
         setResizable(false);
         setSize(1000,1000);
         setVisible(true);
-        signUpButton.addActionListener(new ActionListener() {
+        RegisterAccountButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 ClientDAO clientDAO = new ClientDAOImpl();
