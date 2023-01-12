@@ -15,6 +15,7 @@ public class Register extends JFrame{
     private JTextField passwordTextField;
     private JButton signUpButton;
     private JPanel panel2;
+    private JButton button1;
 
     private Register my_frame;
 
@@ -25,7 +26,7 @@ public class Register extends JFrame{
         setTitle("Welcome");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
-        setSize(500,500);
+        setSize(1000,1000);
         setVisible(true);
         signUpButton.addActionListener(new ActionListener() {
             @Override

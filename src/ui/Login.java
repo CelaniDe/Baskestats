@@ -23,7 +23,7 @@ public class Login extends JFrame {
         my_frame = this;
         setTitle("Login");
         setResizable(false);
-        setSize(500,500);
+        setSize(1000,1000);
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         loginButton.addActionListener(new ActionListener() {
