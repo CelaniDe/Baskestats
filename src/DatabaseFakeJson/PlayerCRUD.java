@@ -24,7 +24,6 @@ public class PlayerCRUD {
 
             for (int i = 0; i < playerList.size(); i++) {
                 JSONObject playerObject = (JSONObject) playerList.get(i);
-                System.out.println(playerObject);
                 String name = (String) playerObject.get("name");
                 long age = (long) playerObject.get("age");
                 long height = (long) playerObject.get("height");

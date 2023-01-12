@@ -96,5 +96,18 @@ public class Player
     public void setTeam_id(int team_id) {
         this.team_id = team_id;
     }
+
+    @Override
+    public String toString() {
+        return "Player{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", height=" + height +
+                ", weight=" + weight +
+                ", Nationality='" + Nationality + '\'' +
+                ", id=" + id +
+                ", team_id=" + team_id +
+                '}';
+    }
 }
 
