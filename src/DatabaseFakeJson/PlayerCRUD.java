@@ -5,6 +5,7 @@ import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.List;
 
+import model.Team;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -41,6 +42,17 @@ public class PlayerCRUD {
         }
         return null;
     }
+    public List<Player> getPlayers(String playerNamePassed)
+    {
+        List<Player> allPlayers = getPlayers();
+        List<Player> matchedPlayers = new ArrayList<>();
+        for(Player player : allPlayers)
+            if(player.getName().contains(playerNamePassed))
+                matchedPlayers.add(player);
+
+        return matchedPlayers;
+    }
+
 
     public void insertPlayers(List<Player> players) {
         {
