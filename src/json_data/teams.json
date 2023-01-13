@@ -4,7 +4,5 @@
   {"city":"Miami","name":"Miami Heat","founded":1988,"id":3,"CEO":"Micky Arison"},
   {"city":"San Antonio","name":"San Antonio Spurs","founded":1967,"id":4,"CEO":"R.C. Buford"},
   {
-  "city":"Thessaloniki","name":"Aris","founded":1914,"id":7,"CEO":"Geropoulos"}
-,{"city":"Thessaloniki","name":"Aris","founded":1914,"id":8,"CEO":"Geropoulos"},
-  {"city":"Thessaloniki","name":"Iraklis","founded":1905,"id":9,"CEO":"Nixovgaltis"},
-  {"city":"Thessaloniki","name":"Iraklis","founded":1905,"id":10,"CEO":"Nixovgaltis"}]
+  "city":"Thessaloniki","name":"Aris","founded":1914,"id":5,"CEO":"Geropoulos"},
+  {"city":"Thessaloniki","name":"Iraklis","founded":1905,"id":6,"CEO":"Nixovgaltis"}]
