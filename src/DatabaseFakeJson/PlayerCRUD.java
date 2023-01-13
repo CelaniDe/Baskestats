@@ -139,13 +139,10 @@ public class PlayerCRUD {
     public Player getPlayerById(int id)
     {
         List<Player> allPlayers = getPlayers();
-        System.out.println(allPlayers);
         for(Player player : allPlayers)
         {
-//            System.out.println(player);
             if(player.getId() == id){
                 return player;
-
             }
         }
         return null;
