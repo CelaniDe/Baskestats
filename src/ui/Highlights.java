@@ -81,6 +81,34 @@ public class Highlights extends JFrame{
                 dispose();
             }
         });
+        NavNews.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame jFrame = new News();
+                dispose();
+            }
+        });
+        NavSearch.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame jFrame = new Search();
+                dispose();
+            }
+        });
+        NavLeague.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame jFrame = new LeagueStanding();
+                dispose();
+            }
+        });
+        NavMatch.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame jFrame = new Matches();
+                dispose();
+            }
+        });
     }
 
     public void setTopScorers()
