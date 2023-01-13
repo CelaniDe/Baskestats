@@ -2,8 +2,10 @@ package ui;
 
 import dao.MatchDAO;
 import dao.MatchDAOImpl;
+import org.json.simple.JSONObject;
 
 import javax.swing.*;
+
 
 public class Match extends JFrame {
 
@@ -35,6 +37,9 @@ public class Match extends JFrame {
         setVisible(true);
 
         MatchDAO matchDAO = new MatchDAOImpl();
-        //....
+        model.Match match = matchDAO.getMatchById(match_id);
+        Info1.setText("Date : " + match.getDate());
+        Info2.setText("Time : " + match.getTime());
+        Info3.setText("Stadium : " + match.getStadium());
     }
 }
