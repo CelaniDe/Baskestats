@@ -7,5 +7,6 @@ public interface PlayerDAO
     public void deletePlayer();
     public void addPlayer();
     public Player[] getPlayer();
+    public Player getPlayerById(int player_id);
 
 }
