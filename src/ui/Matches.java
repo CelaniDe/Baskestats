@@ -26,7 +26,7 @@ public class Matches extends  JFrame {
         setTitle("Matches");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
-        setSize(800, 800);
+        setSize(1000, 800);
         setVisible(true);
     }
 }

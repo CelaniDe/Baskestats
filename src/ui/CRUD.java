@@ -16,7 +16,7 @@ public class CRUD extends JFrame {
         setTitle("CRUD");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
-        setSize(800,800);
+        setSize(1000,800);
         setVisible(true);
     }
 }
