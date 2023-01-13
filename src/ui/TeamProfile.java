@@ -1,5 +1,12 @@
 package ui;
 
+import dao.GeneralStatsDAO;
+import dao.GeneralStatsDAOImpl;
+import dao.TeamDAO;
+import dao.TeamDAOImpl;
+import model.GeneralStats;
+import model.Team;
+
 import javax.swing.*;
 
 public class TeamProfile extends JFrame {
@@ -22,12 +29,21 @@ public class TeamProfile extends JFrame {
     private JTable TeamPlayersTable;
     private JScrollPane PlayerTablePane;
 
-    public TeamProfile() {
+    public TeamProfile(int team_id) {
         setContentPane(Master);
         setTitle("Welcome");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
         setSize(1000, 1000);
         setVisible(true);
+
+        TeamDAO teamDAO = new TeamDAOImpl();
+        Team selectedTeam = teamDAO.getTeamById(team_id);
+        TeamName.setText(selectedTeam.getName());
+        GeneralStatsDAO generalStatsDAO = new GeneralStatsDAOImpl();
+        GeneralStats teamStats = generalStatsDAO.getGeneralStatsForTeam(team_id);
+        GamesPlayed.setText(GamesPlayed.getText() + " " + teamStats.getNumber_of_matches());
+        Wins.setText(Wins.getText() + " " + teamStats.getWins());
+        TeamLogoButton.setIcon(new ImageIcon("src/img/teams/" + team_id + ".jpeg"));
     }
 }
