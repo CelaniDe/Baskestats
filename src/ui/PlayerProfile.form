@@ -173,7 +173,7 @@
             </constraints>
             <properties>
               <font size="25"/>
-              <text value="Games played :"/>
+              <text value="Age : "/>
             </properties>
           </component>
           <component id="429aa" class="javax.swing.JLabel" binding="Info2">
@@ -182,7 +182,7 @@
             </constraints>
             <properties>
               <font size="25"/>
-              <text value="Wins: "/>
+              <text value="Height : "/>
             </properties>
           </component>
           <component id="fd0a4" class="javax.swing.JLabel" binding="Info3">
@@ -191,7 +191,7 @@
             </constraints>
             <properties>
               <font size="25"/>
-              <text value="Points :"/>
+              <text value="Nationality :"/>
             </properties>
           </component>
           <component id="968c8" class="javax.swing.JLabel" binding="Info4">
@@ -200,7 +200,7 @@
             </constraints>
             <properties>
               <font size="25"/>
-              <text value="Age :"/>
+              <text value="Points : "/>
             </properties>
           </component>
           <component id="e667c" class="javax.swing.JLabel" binding="Info5">
@@ -209,7 +209,7 @@
             </constraints>
             <properties>
               <font size="25"/>
-              <text value="Total Transfers :"/>
+              <text value="Assists :"/>
             </properties>
           </component>
         </children>
