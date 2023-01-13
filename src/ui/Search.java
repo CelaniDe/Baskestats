@@ -12,17 +12,10 @@ public class Search extends JFrame {
     private JButton NavHighlights;
     private JPanel Header;
     private JLabel SearchTitle;
-    private JPanel Mid;
-    private JLabel Result1;
-    private JLabel Result2;
-    private JLabel Result3;
-    private JLabel Result4;
-    private JLabel Result5;
-    private JTextField textField1;
-    private JButton SwitchSearchButton;
-    private JLabel Result6;
-    private JLabel Result7;
-    private JLabel Result8;
+    private JTextField InputField;
+    private JComboBox SearchChoiceBox;
+    private JTable ResultsTable;
+    private JScrollPane TablePane;
 
     public Search()
     {

@@ -5,7 +5,6 @@ import javax.swing.table.DefaultTableModel;
 
 public class News extends JFrame{
     private JPanel newsPanel;
-    private JLabel newsLabel;
     private JTable table1;
 
     public News(){

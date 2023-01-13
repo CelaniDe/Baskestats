@@ -15,11 +15,9 @@ public class PlayerProfile extends JFrame {
     private JButton NavNews;
     private JButton NavHighlights;
     private JPanel Mid;
-    private JLabel Info1;
-    private JLabel Info2;
-    private JLabel Info3;
-    private JLabel Info4;
-    private JLabel Info5;
+    private JLabel PointsInfo;
+    private JLabel AssistInfo;
+    private JLabel ShotsInfo;
     private JLabel PlayerTeam;
 
     public PlayerProfile()
