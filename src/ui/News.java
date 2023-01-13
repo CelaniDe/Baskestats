@@ -4,15 +4,24 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
 public class News extends JFrame{
-    private JPanel newsPanel;
-    private JTable table1;
+    private JPanel Master;
+    private JPanel Navigation;
+    private JButton NavMatch;
+    private JButton NavLeague;
+    private JButton NavSearch;
+    private JButton NavNews;
+    private JButton NavHighlights;
+    private JTable NewsTable;
+    private JPanel Header;
+    private JScrollPane TablePane;
+    private JLabel NewsTitle;
 
     public News(){
-        setContentPane(newsPanel);
+        setContentPane(Master);
         setTitle("News");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
-        setSize(500,500);
+        setSize(800,800);
         setVisible(true);
 
         String[][] data = {
@@ -22,6 +31,6 @@ public class News extends JFrame{
         String[] columnNames = { "Title" , "Description"};
 
         DefaultTableModel model = new DefaultTableModel(data, columnNames);
-        table1.setModel(model);
+        NewsTable.setModel(model);
     }
 }
