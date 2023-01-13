@@ -1,6 +1,11 @@
 package ui;
 
+import dao.GeneralStatsDAOImpl;
+import dao.PlayerDAOImpl;
+
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Matches extends  JFrame {
     private JPanel Master;
@@ -12,13 +17,11 @@ public class Matches extends  JFrame {
     private JButton NavHighlights;
     private JLabel MatchesTitle;
     private JPanel Header;
-    private JPanel Mid;
     private JButton PastButton;
     private JButton PresentButton;
     private JButton FutureButton;
-    private JButton Team2ImgButton;
-    private JButton Team1ImgButton;
-    private JLabel MatchInfoLabel;
+    private JScrollPane TablePane;
+    private JTable MatchesTable;
 
     public Matches()
     {
@@ -28,5 +31,35 @@ public class Matches extends  JFrame {
         setResizable(false);
         setSize(1000, 800);
         setVisible(true);
+
+        NavHighlights.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame jFrame = new Highlights(new GeneralStatsDAOImpl(),new PlayerDAOImpl());
+                dispose();
+            }
+        });
+
+        NavNews.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame jFrame = new News();
+                dispose();
+            }
+        });
+        NavSearch.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame jFrame = new Search();
+                dispose();
+            }
+        });
+        NavLeague.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame jFrame = new LeagueStanding();
+                dispose();
+            }
+        });
     }
 }

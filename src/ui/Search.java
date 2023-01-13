@@ -1,6 +1,11 @@
 package ui;
 
+import dao.GeneralStatsDAOImpl;
+import dao.PlayerDAOImpl;
+
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Search extends JFrame {
     private JPanel Master;
@@ -25,5 +30,35 @@ public class Search extends JFrame {
         setResizable(false);
         setSize(1000, 800);
         setVisible(true);
+
+        NavHighlights.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame jFrame = new Highlights(new GeneralStatsDAOImpl(),new PlayerDAOImpl());
+                dispose();
+            }
+        });
+
+        NavNews.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame jFrame = new News();
+                dispose();
+            }
+        });
+        NavLeague.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame jFrame = new LeagueStanding();
+                dispose();
+            }
+        });
+        NavMatch.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame jFrame = new Matches();
+                dispose();
+            }
+        });
     }
 }

@@ -41,11 +41,11 @@ public class TeamProfile extends JFrame {
 
         TeamDAO teamDAO = new TeamDAOImpl();
         Team selectedTeam = teamDAO.getTeamById(team_id);
-        TeamName.setText(selectedTeam.getName());
+        TeamNameLabel.setText(selectedTeam.getName());
         GeneralStatsDAO generalStatsDAO = new GeneralStatsDAOImpl();
         GeneralStats teamStats = generalStatsDAO.getGeneralStatsForTeam(team_id);
         GamesPlayed.setText(GamesPlayed.getText() + " " + teamStats.getNumber_of_matches());
         Wins.setText(Wins.getText() + " " + teamStats.getWins());
-        TeamLogoButton.setIcon(new ImageIcon("src/img/teams/" + team_id + ".jpeg"));
+        TeamImgButton.setIcon(new ImageIcon("src/img/teams/" + team_id + ".jpeg"));
     }
 }

@@ -5,9 +5,9 @@ import model.GeneralStats;
 import model.Player;
 import model.Team;
 
-import java.util.List;
-
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class PlayerProfile extends JFrame {
     private JPanel Master;
@@ -22,10 +22,12 @@ public class PlayerProfile extends JFrame {
     private JButton NavNews;
     private JButton NavHighlights;
     private JPanel Mid;
-    private JLabel PointsInfo;
-    private JLabel AssistInfo;
-    private JLabel ShotsInfo;
+    private JLabel Info1;
+    private JLabel Info2;
+    private JLabel Info3;
     private JLabel PlayerTeam;
+    private JLabel Info4;
+    private JLabel Info5;
 
     public PlayerProfile(int player_id)
     {
@@ -51,5 +53,43 @@ public class PlayerProfile extends JFrame {
         Info5.setText(Info5.getText() + " " + playerStats.getAssists());
 
         PlayerPhotoButton.setIcon(new ImageIcon("src/img/"+ player_id + ".jpeg"));
+
+        NavNews.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame jFrame = new News();
+                dispose();
+            }
+        });
+        NavSearch.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame jFrame = new Search();
+                dispose();
+            }
+        });
+        NavLeague.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame jFrame = new LeagueStanding();
+                dispose();
+            }
+        });
+        NavMatch.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame jFrame = new Matches();
+                dispose();
+            }
+        });
+
+        NavHighlights.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame jFrame = new Highlights(new GeneralStatsDAOImpl(), new PlayerDAOImpl());
+                dispose();
+            }
+        });
     }
+
 }

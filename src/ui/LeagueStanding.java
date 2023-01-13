@@ -1,15 +1,14 @@
 package ui;
 
 import DatabaseFakeJson.GeneralStatsCRUD;
-import dao.GeneralStatsDAO;
-import dao.GeneralStatsDAOImpl;
-import dao.TeamDAO;
-import dao.TeamDAOImpl;
+import dao.*;
 import model.GeneralStats;
 import model.Team;
 
 import javax.swing.*;
 import javax.swing.table.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.List;
 
 public class LeagueStanding extends JFrame {
@@ -55,5 +54,35 @@ public class LeagueStanding extends JFrame {
 
         DefaultTableModel model = new DefaultTableModel(rows2, columns);
         LeagueTable.setModel(model);
+
+        NavHighlights.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame jFrame = new Highlights(new GeneralStatsDAOImpl(),new PlayerDAOImpl());
+                dispose();
+            }
+        });
+
+        NavNews.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame jFrame = new News();
+                dispose();
+            }
+        });
+        NavSearch.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame jFrame = new Search();
+                dispose();
+            }
+        });
+        NavMatch.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame jFrame = new Matches();
+                dispose();
+            }
+        });
     }
 }

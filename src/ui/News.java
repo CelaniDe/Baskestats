@@ -1,7 +1,12 @@
 package ui;
 
+import dao.GeneralStatsDAOImpl;
+import dao.PlayerDAOImpl;
+
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class News extends JFrame{
     private JPanel Master;
@@ -32,5 +37,35 @@ public class News extends JFrame{
 
         DefaultTableModel model = new DefaultTableModel(data, columnNames);
         NewsTable.setModel(model);
+
+        NavHighlights.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame jFrame = new Highlights(new GeneralStatsDAOImpl(),new PlayerDAOImpl());
+                dispose();
+            }
+        });
+
+        NavSearch.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame jFrame = new Search();
+                dispose();
+            }
+        });
+        NavLeague.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame jFrame = new LeagueStanding();
+                dispose();
+            }
+        });
+        NavMatch.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame jFrame = new Matches();
+                dispose();
+            }
+        });
     }
 }
