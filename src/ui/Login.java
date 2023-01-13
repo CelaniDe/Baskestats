@@ -33,7 +33,7 @@ public class Login extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 ClientDAO clientDAO = new ClientDAOImpl();
-                Account loggedInAccount = clientDAO.getAccount(usernameTextField.getText(),passwordPasswordField.getText());
+                Account loggedInAccount = clientDAO.getAccount(UsernameField.getText(),PasswordField.getText());
 
                 if(loggedInAccount == null)
                 {

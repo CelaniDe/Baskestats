@@ -23,7 +23,7 @@ public class Matches extends  JFrame {
     public Matches()
     {
         setContentPane(Master);
-        setTitle("Welcome");
+        setTitle("Matches");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
         setSize(1000, 1000);

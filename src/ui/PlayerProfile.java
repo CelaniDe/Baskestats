@@ -25,7 +25,7 @@ public class PlayerProfile extends JFrame {
     public PlayerProfile()
     {
         setContentPane(Master);
-        setTitle("Welcome");
+        setTitle("PlayerProfile");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
         setSize(1000, 1000);
