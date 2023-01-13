@@ -60,6 +60,8 @@ public class Highlights extends JFrame{
     public void setTopScorers()
     {
         set1Scorer();
+        set2Scorer();
+        set3Scorer();
     }
 
     public void set1Scorer()
@@ -68,14 +70,30 @@ public class Highlights extends JFrame{
         GeneralStats firstScoreGeneralStat = first3ScorersGeneralStats.get(0);
         int id_of_firstScorer = firstScoreGeneralStat.getId();
         Player firstScorer = playerDAO.getPlayerById(id_of_firstScorer);
-        System.out.println(id_of_firstScorer);
-        System.out.println(firstScorer);
-//        for (GeneralStats generalStats : first3ScorersGeneralStats)
-//        {
-//            System.out.println(generalStats.toStringPlayer());
-//        }
-//        Player firstScorer = this.playerDAO.getPlayerById(firstScorerGeneralStats.getId());
-//        System.out.println(firstScorer);
-//        this.Scorer1Label.setText(firstScorer.getName());
+        this.Scorer1Label.setText(firstScorer.getName());
+        ImageIcon playerIcon = new ImageIcon("src/img/"+id_of_firstScorer+".jpeg");
+        this.Scorer1Button.setIcon(playerIcon);
+    }
+
+    public void set2Scorer()
+    {
+        List<GeneralStats> first3ScorersGeneralStats = generalStatsDAO.getTop3GeneralStatsByPointsForPlayer();
+        GeneralStats firstScoreGeneralStat = first3ScorersGeneralStats.get(1);
+        int id_of_firstScorer = firstScoreGeneralStat.getId();
+        Player firstScorer = playerDAO.getPlayerById(id_of_firstScorer);
+        this.Scorer2Label.setText(firstScorer.getName());
+        ImageIcon playerIcon = new ImageIcon("src/img/"+id_of_firstScorer+".jpeg");
+        this.Scorer2Button.setIcon(playerIcon);
+    }
+
+    public void set3Scorer()
+    {
+        List<GeneralStats> first3ScorersGeneralStats = generalStatsDAO.getTop3GeneralStatsByPointsForPlayer();
+        GeneralStats firstScoreGeneralStat = first3ScorersGeneralStats.get(2);
+        int id_of_firstScorer = firstScoreGeneralStat.getId();
+        Player firstScorer = playerDAO.getPlayerById(id_of_firstScorer);
+        this.Scorer3Label.setText(firstScorer.getName());
+        ImageIcon playerIcon = new ImageIcon("src/img/"+id_of_firstScorer+".jpeg");
+        this.Scorer3Button.setIcon(playerIcon);
     }
 }

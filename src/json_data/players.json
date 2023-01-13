@@ -34,5 +34,59 @@
     "weight": 220,
     "nationality": "United States",
     "team_id" : 2
+  },
+  {
+    "id" : 4,
+    "name": "Mpampis",
+    "age": 31,
+    "height": 220,
+    "weight": 220,
+    "nationality": "United States",
+    "team_id" : 2
+  },
+  {
+    "id" : 5,
+    "name": "Antonis",
+    "age": 31,
+    "height": 220,
+    "weight": 220,
+    "nationality": "United States",
+    "team_id" : 2
+  },
+  {
+    "id" : 6,
+    "name": "Michalaras",
+    "age": 31,
+    "height": 220,
+    "weight": 220,
+    "nationality": "United States",
+    "team_id" : 2
+  },
+  {
+    "id" : 7,
+    "name": "Loski",
+    "age": 31,
+    "height": 220,
+    "weight": 220,
+    "nationality": "United States",
+    "team_id" : 2
+  },
+  {
+    "id" : 8,
+    "name": "To afentiko",
+    "age": 31,
+    "height": 220,
+    "weight": 220,
+    "nationality": "United States",
+    "team_id" : 2
+  },
+  {
+    "id" : 9,
+    "name": "Papadopoulos",
+    "age": 31,
+    "height": 220,
+    "weight": 220,
+    "nationality": "United States",
+    "team_id" : 2
   }
 ]
