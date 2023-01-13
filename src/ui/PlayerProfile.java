@@ -23,10 +23,10 @@ public class PlayerProfile extends JFrame {
     public PlayerProfile()
     {
         setContentPane(Master);
-        setTitle("PlayerProfile");
+        setTitle("Player Profile");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
-        setSize(1000, 1000);
+        setSize(800, 800);
         setVisible(true);
     }
 }

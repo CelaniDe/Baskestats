@@ -37,10 +37,10 @@ public class Highlights extends JFrame{
 
     public Highlights(){
         setContentPane(Master);
-        setTitle("Welcome");
+        setTitle("Highlights");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
-        setSize(1000, 1000);
+        setSize(800, 800);
         setVisible(true);
     }
 }

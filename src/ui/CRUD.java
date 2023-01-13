@@ -8,6 +8,7 @@ public class CRUD extends JFrame {
     private JButton CRUDPlayersButton;
     private JButton CRUDMatchButton;
     private JButton RUDAccountButton;
+    private JButton CRUDNewsButton;
 
     public CRUD()
     {
@@ -15,7 +16,7 @@ public class CRUD extends JFrame {
         setTitle("CRUD");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
-        setSize(1000,1000);
+        setSize(800,800);
         setVisible(true);
     }
 }

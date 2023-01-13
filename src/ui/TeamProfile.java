@@ -24,10 +24,10 @@ public class TeamProfile extends JFrame {
 
     public TeamProfile() {
         setContentPane(Master);
-        setTitle("Welcome");
+        setTitle("Team Profile");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
-        setSize(1000, 1000);
+        setSize(800, 800);
         setVisible(true);
     }
 }

@@ -20,10 +20,10 @@ public class Search extends JFrame {
     public Search()
     {
         setContentPane(Master);
-        setTitle("Welcome");
+        setTitle("Search");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
-        setSize(1000, 1000);
+        setSize(800, 800);
         setVisible(true);
     }
 }
