@@ -20,8 +20,6 @@ public class Match extends JFrame {
     private JLabel Info1;
     private JLabel Info2;
     private JLabel Info3;
-    private JLabel Info4;
-    private JLabel Info5;
     private JButton Team2ImgButton;
 
     public Match()

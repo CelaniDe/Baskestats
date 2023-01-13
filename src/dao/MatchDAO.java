@@ -17,6 +17,8 @@ public interface MatchDAO {
 
     );
 
+    public Match getMatchById(int id);
+
     public List<Match> getFutureMatches();
 
     public List<Match> getPastMatches();

@@ -115,4 +115,15 @@ public class MatchCRUD
 
         return futureMatches;
     }
+
+    public Match getMatchById(int id)
+    {
+        List<Match> allMatches = getAllMatches();
+        for(Match match : allMatches)
+        {
+            if(match.getId() == id)
+                return match;
+        }
+        return null;
+    }
 }
