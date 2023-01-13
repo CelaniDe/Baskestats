@@ -17,11 +17,11 @@ public class Matches extends  JFrame {
     private JButton NavHighlights;
     private JLabel MatchesTitle;
     private JPanel Header;
-    private JButton PastButton;
-    private JButton PresentButton;
-    private JButton FutureButton;
     private JScrollPane TablePane;
     private JTable MatchesTable;
+    private JRadioButton PastButton;
+    private JRadioButton PresentButton;
+    private JRadioButton FutureButton;
 
     public Matches()
     {
