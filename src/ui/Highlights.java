@@ -6,6 +6,8 @@ import model.GeneralStats;
 import model.Player;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.List;
 
 public class Highlights extends JFrame{
@@ -55,6 +57,30 @@ public class Highlights extends JFrame{
         setSize(1000, 1000);
         setVisible(true);
         setTopScorers();
+        Scorer1Button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int id_of_firstScorer = getIdOfNTopPlayer(0);
+                JFrame jFrame = new PlayerProfile(id_of_firstScorer);
+                dispose();
+            }
+        });
+        Scorer2Button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int id_of_firstScorer = getIdOfNTopPlayer(1);
+                JFrame jFrame = new PlayerProfile(id_of_firstScorer);
+                dispose();
+            }
+        });
+        Scorer3Button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int id_of_firstScorer = getIdOfNTopPlayer(2);
+                JFrame jFrame = new PlayerProfile(id_of_firstScorer);
+                dispose();
+            }
+        });
     }
 
     public void setTopScorers()
@@ -66,9 +92,8 @@ public class Highlights extends JFrame{
 
     public void set1Scorer()
     {
-        List<GeneralStats> first3ScorersGeneralStats = generalStatsDAO.getTop3GeneralStatsByPointsForPlayer();
-        GeneralStats firstScoreGeneralStat = first3ScorersGeneralStats.get(0);
-        int id_of_firstScorer = firstScoreGeneralStat.getId();
+
+        int id_of_firstScorer = getIdOfNTopPlayer(0);
         Player firstScorer = playerDAO.getPlayerById(id_of_firstScorer);
         this.Scorer1Label.setText(firstScorer.getName());
         ImageIcon playerIcon = new ImageIcon("src/img/"+id_of_firstScorer+".jpeg");
@@ -77,9 +102,7 @@ public class Highlights extends JFrame{
 
     public void set2Scorer()
     {
-        List<GeneralStats> first3ScorersGeneralStats = generalStatsDAO.getTop3GeneralStatsByPointsForPlayer();
-        GeneralStats firstScoreGeneralStat = first3ScorersGeneralStats.get(1);
-        int id_of_firstScorer = firstScoreGeneralStat.getId();
+        int id_of_firstScorer = getIdOfNTopPlayer(1);
         Player firstScorer = playerDAO.getPlayerById(id_of_firstScorer);
         this.Scorer2Label.setText(firstScorer.getName());
         ImageIcon playerIcon = new ImageIcon("src/img/"+id_of_firstScorer+".jpeg");
@@ -88,12 +111,18 @@ public class Highlights extends JFrame{
 
     public void set3Scorer()
     {
-        List<GeneralStats> first3ScorersGeneralStats = generalStatsDAO.getTop3GeneralStatsByPointsForPlayer();
-        GeneralStats firstScoreGeneralStat = first3ScorersGeneralStats.get(2);
-        int id_of_firstScorer = firstScoreGeneralStat.getId();
+        int id_of_firstScorer = getIdOfNTopPlayer(2);
         Player firstScorer = playerDAO.getPlayerById(id_of_firstScorer);
         this.Scorer3Label.setText(firstScorer.getName());
         ImageIcon playerIcon = new ImageIcon("src/img/"+id_of_firstScorer+".jpeg");
         this.Scorer3Button.setIcon(playerIcon);
+    }
+
+    public int getIdOfNTopPlayer(int n)
+    {
+        List<GeneralStats> first3ScorersGeneralStats = generalStatsDAO.getTop3GeneralStatsByPointsForPlayer();
+        GeneralStats firstScoreGeneralStat = first3ScorersGeneralStats.get(n);
+        int id_of_firstScorer = firstScoreGeneralStat.getId();
+        return id_of_firstScorer;
     }
 }
