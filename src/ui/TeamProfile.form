@@ -3,7 +3,7 @@
   <grid id="27dc6" binding="Master" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="560" height="1009"/>
+      <xy x="20" y="20" width="560" height="1313"/>
     </constraints>
     <properties>
       <background color="-1"/>
@@ -11,131 +11,167 @@
     </properties>
     <border type="none"/>
     <children>
-      <grid id="c11c0" binding="Content" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="0" vgap="0">
-        <margin top="0" left="0" bottom="0" right="0"/>
+      <scrollpane id="2a82a">
         <constraints>
-          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false">
-            <minimum-size width="-1" height="850"/>
-            <preferred-size width="-1" height="850"/>
-            <maximum-size width="-1" height="850"/>
-          </grid>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <alignmentX value="0.0"/>
-          <alignmentY value="0.0"/>
           <background color="-1"/>
         </properties>
         <border type="none"/>
         <children>
-          <grid id="2a879" binding="Header" layout-manager="GridLayoutManager" row-count="4" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+          <grid id="c11c0" binding="Content" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="0" vgap="0">
             <margin top="0" left="0" bottom="0" right="0"/>
-            <constraints>
-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
-            </constraints>
+            <constraints/>
             <properties>
-              <background color="-10637195"/>
-            </properties>
-            <border type="none"/>
-            <children>
-              <component id="65103" class="javax.swing.JButton" binding="TeamLogoButton">
-                <constraints>
-                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <background color="-1"/>
-                  <borderPainted value="false"/>
-                  <contentAreaFilled value="false"/>
-                  <focusPainted value="true"/>
-                  <foreground color="-1"/>
-                  <icon value="img/team-logo.png"/>
-                  <selected value="false"/>
-                </properties>
-              </component>
-              <component id="f2879" class="javax.swing.JLabel" binding="TeamProfileTitle">
-                <constraints>
-                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="2" fill="0" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <background color="-1"/>
-                  <font size="35"/>
-                  <foreground color="-1"/>
-                  <text value="Team Profile"/>
-                </properties>
-              </component>
-              <component id="73451" class="javax.swing.JLabel" binding="TeamName">
-                <constraints>
-                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <background color="-1"/>
-                  <font size="35"/>
-                  <foreground color="-1"/>
-                  <text value="Team Name"/>
-                </properties>
-              </component>
-              <component id="77e74" class="javax.swing.JLabel" binding="TeamSlogan">
-                <constraints>
-                  <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="1" fill="0" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <background color="-1"/>
-                  <font size="25"/>
-                  <foreground color="-1"/>
-                  <text value="Team Slogan"/>
-                </properties>
-              </component>
-            </children>
-          </grid>
-          <grid id="5b954" binding="Mid" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-            <margin top="0" left="0" bottom="0" right="0"/>
-            <constraints>
-              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
+              <alignmentX value="0.0"/>
+              <alignmentY value="0.0"/>
               <background color="-1"/>
             </properties>
             <border type="none"/>
             <children>
-              <component id="26f7a" class="javax.swing.JLabel" binding="GamesPlayed">
+              <grid id="2a879" binding="Header" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                <margin top="0" left="0" bottom="0" right="0"/>
                 <constraints>
-                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <font size="25"/>
-                  <text value="Games played :"/>
+                  <background color="-10637195"/>
                 </properties>
-              </component>
-              <component id="92a0b" class="javax.swing.JLabel" binding="Wins">
+                <border type="none"/>
+                <children>
+                  <grid id="3857e" binding="ImgPanel" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                    <margin top="0" left="0" bottom="0" right="0"/>
+                    <constraints>
+                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-10637195"/>
+                    </properties>
+                    <border type="none"/>
+                    <children>
+                      <component id="46ce7" class="javax.swing.JButton" binding="TeamImgButton">
+                        <constraints>
+                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <background color="-1"/>
+                          <borderPainted value="false"/>
+                          <contentAreaFilled value="false"/>
+                          <focusPainted value="true"/>
+                          <foreground color="-1"/>
+                          <icon value="img/team-logo.png"/>
+                          <selected value="false"/>
+                        </properties>
+                      </component>
+                    </children>
+                  </grid>
+                  <grid id="55a3" binding="TeamTitle" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                    <margin top="0" left="0" bottom="0" right="0"/>
+                    <constraints>
+                      <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-10637195"/>
+                    </properties>
+                    <border type="none"/>
+                    <children>
+                      <component id="a1bb5" class="javax.swing.JLabel" binding="TeamTitleLabel">
+                        <constraints>
+                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="2" fill="0" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <background color="-1"/>
+                          <font size="25"/>
+                          <foreground color="-1"/>
+                          <text value="Team Profile"/>
+                        </properties>
+                      </component>
+                      <component id="ea79f" class="javax.swing.JLabel" binding="TeamNameLabel">
+                        <constraints>
+                          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <background color="-1"/>
+                          <font size="35"/>
+                          <foreground color="-1"/>
+                          <text value="Team Name"/>
+                        </properties>
+                      </component>
+                      <component id="cc69" class="javax.swing.JLabel" binding="TeamSloganLabel">
+                        <constraints>
+                          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="1" fill="0" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <background color="-1"/>
+                          <font size="25"/>
+                          <foreground color="-1"/>
+                          <text value="Team Slogan"/>
+                        </properties>
+                      </component>
+                    </children>
+                  </grid>
+                </children>
+              </grid>
+              <grid id="5b954" binding="Mid" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                <margin top="0" left="0" bottom="0" right="0"/>
                 <constraints>
-                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <font size="25"/>
-                  <text value="Wins: "/>
-                </properties>
-              </component>
-              <scrollpane id="db5b1" binding="PlayerTablePane">
-                <constraints>
-                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
                   <background color="-1"/>
                 </properties>
                 <border type="none"/>
                 <children>
-                  <component id="e7dba" class="javax.swing.JTable" binding="TeamPlayersTable">
-                    <constraints/>
+                  <component id="26f7a" class="javax.swing.JLabel" binding="GamesPlayed">
+                    <constraints>
+                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <font size="25"/>
+                      <text value="Games played :"/>
+                    </properties>
+                  </component>
+                  <component id="92a0b" class="javax.swing.JLabel" binding="Wins">
+                    <constraints>
+                      <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <font size="25"/>
+                      <text value="Wins: "/>
+                    </properties>
+                  </component>
+                  <scrollpane id="db5b1" binding="PlayerTablePane">
+                    <constraints>
+                      <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                        <minimum-size width="-1" height="150"/>
+                      </grid>
+                    </constraints>
                     <properties>
                       <background color="-1"/>
                     </properties>
-                  </component>
+                    <border type="none"/>
+                    <children>
+                      <component id="e7dba" class="javax.swing.JTable" binding="TeamPlayersTable">
+                        <constraints/>
+                        <properties>
+                          <autoResizeMode value="0"/>
+                          <background color="-1"/>
+                          <fillsViewportHeight value="false"/>
+                          <opaque value="false"/>
+                          <preferredScrollableViewportSize width="200" height="200"/>
+                          <preferredSize width="200" height="200"/>
+                        </properties>
+                      </component>
+                    </children>
+                  </scrollpane>
                 </children>
-              </scrollpane>
+              </grid>
             </children>
           </grid>
         </children>
-      </grid>
-      <grid id="84095" binding="Navigation" layout-manager="GridLayoutManager" row-count="1" column-count="7" same-size-horizontally="false" same-size-vertically="false" hgap="0" vgap="0">
+      </scrollpane>
+      <grid id="f09d" binding="Navigation" layout-manager="GridLayoutManager" row-count="1" column-count="7" same-size-horizontally="false" same-size-vertically="false" hgap="0" vgap="0">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
           <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="2" fill="1" indent="0" use-parent-layout="false">
@@ -150,12 +186,12 @@
         </properties>
         <border type="none"/>
         <children>
-          <component id="a3f2e" class="javax.swing.JButton" binding="NavMatch">
+          <component id="92f3d" class="javax.swing.JButton" binding="NavMatch">
             <constraints>
               <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <background color="-1246977"/>
+              <background color="-1"/>
               <borderPainted value="true"/>
               <foreground color="-1"/>
               <horizontalTextPosition value="0"/>
@@ -163,60 +199,60 @@
               <text value=""/>
             </properties>
           </component>
-          <component id="65e20" class="javax.swing.JButton" binding="NavLeague">
+          <component id="cbd83" class="javax.swing.JButton" binding="NavLeague">
             <constraints>
               <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <background color="-1312769"/>
+              <background color="-1"/>
               <borderPainted value="true"/>
               <foreground color="-1"/>
               <icon value="img/nav-league.png"/>
               <text value=""/>
             </properties>
           </component>
-          <component id="8d16e" class="javax.swing.JButton" binding="NavSearch">
+          <component id="da393" class="javax.swing.JButton" binding="NavSearch">
             <constraints>
               <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <background color="-1247233"/>
+              <background color="-1"/>
               <borderPainted value="true"/>
               <foreground color="-1"/>
               <icon value="img/nav-search.png"/>
               <text value=""/>
             </properties>
           </component>
-          <component id="4578d" class="javax.swing.JButton" binding="NavNews">
+          <component id="dd696" class="javax.swing.JButton" binding="NavNews">
             <constraints>
               <grid row="0" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <background color="-1378049"/>
+              <background color="-1"/>
               <borderPainted value="true"/>
               <foreground color="-1"/>
               <icon value="img/nav-news.png"/>
               <text value=""/>
             </properties>
           </component>
-          <component id="54743" class="javax.swing.JButton" binding="NavHighlights">
+          <component id="4f2f1" class="javax.swing.JButton" binding="NavHighlights">
             <constraints>
               <grid row="0" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <background color="-1378049"/>
+              <background color="-1"/>
               <borderPainted value="true"/>
               <foreground color="-1"/>
               <icon value="img/nav-highlights.png"/>
               <text value=""/>
             </properties>
           </component>
-          <hspacer id="c0172">
+          <hspacer id="30906">
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
           </hspacer>
-          <hspacer id="6c948">
+          <hspacer id="d252c">
             <constraints>
               <grid row="0" column="6" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
