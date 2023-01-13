@@ -22,20 +22,18 @@ public class PlayerProfile extends JFrame {
     private JButton NavNews;
     private JButton NavHighlights;
     private JPanel Mid;
-    private JLabel Info1;
-    private JLabel Info2;
-    private JLabel Info3;
-    private JLabel Info4;
-    private JLabel Info5;
+    private JLabel PointsInfo;
+    private JLabel AssistInfo;
+    private JLabel ShotsInfo;
     private JLabel PlayerTeam;
 
     public PlayerProfile(int player_id)
     {
         setContentPane(Master);
-        setTitle("PlayerProfile");
+        setTitle("Player Profile");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
-        setSize(1000, 1000);
+        setSize(1000, 800);
         setVisible(true);
 
         PlayerDAO playerDao = new PlayerDAOImpl();

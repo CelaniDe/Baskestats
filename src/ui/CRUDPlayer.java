@@ -12,7 +12,7 @@ public class CRUDPlayer extends JFrame {
         setTitle("Create Player");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
-        setSize(600,600);
+        setSize(1000,800);
         setVisible(true);
     }
 }

@@ -51,10 +51,10 @@ public class Highlights extends JFrame{
         this.generalStatsDAO = generalStatsDAO;
         this.playerDAO = playerDAO;
         setContentPane(Master);
-        setTitle("Welcome");
+        setTitle("Highlights");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
-        setSize(1000, 1000);
+        setSize(1000, 800);
         setVisible(true);
         setTopScorers();
         Scorer1Button.addActionListener(new ActionListener() {

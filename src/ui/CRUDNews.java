@@ -21,7 +21,7 @@ public class CRUDNews extends JFrame {
         setTitle("Create News");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
-        setSize(650,650);
+        setSize(1000,800);
         setVisible(true);
         CREATEButton.addActionListener(new ActionListener() {
             @Override

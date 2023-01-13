@@ -29,10 +29,10 @@ public class LeagueStanding extends JFrame {
     public LeagueStanding()
     {
         setContentPane(Master);
-        setTitle("Welcome");
+        setTitle("League Standing");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
-        setSize(1000, 1000);
+        setSize(1000, 800);
         setVisible(true);
 
         TeamDAO teamDAO = new TeamDAOImpl();

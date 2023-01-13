@@ -169,6 +169,7 @@
             <properties>
               <background color="-1"/>
               <borderPainted value="false"/>
+              <contentAreaFilled value="false"/>
               <icon value="img/team-logo3.png"/>
               <text value=""/>
             </properties>

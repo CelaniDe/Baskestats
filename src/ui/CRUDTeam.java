@@ -16,7 +16,7 @@ public class CRUDTeam extends JFrame {
         setTitle("Create Team");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
-        setSize(1000,1000);
+        setSize(1000,800);
         setVisible(true);
     }
 }
