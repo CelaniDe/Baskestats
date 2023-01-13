@@ -1,5 +1,8 @@
 package ui;
 
+import dao.MatchDAO;
+import dao.MatchDAOImpl;
+
 import javax.swing.*;
 
 public class Match extends JFrame {
@@ -20,11 +23,9 @@ public class Match extends JFrame {
     private JLabel Info1;
     private JLabel Info2;
     private JLabel Info3;
-    private JLabel Info4;
-    private JLabel Info5;
     private JButton Team2ImgButton;
 
-    public Match()
+    public Match(int match_id)
     {
         setContentPane(Master);
         setTitle("Match");
@@ -32,5 +33,8 @@ public class Match extends JFrame {
         setResizable(false);
         setSize(1000, 1000);
         setVisible(true);
+
+        MatchDAO matchDAO = new MatchDAOImpl();
+        //....
     }
 }

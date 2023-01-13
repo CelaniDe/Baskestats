@@ -22,6 +22,12 @@ public class MatchDAOImpl implements MatchDAO{
     }
 
     @Override
+    public Match getMatchById(int id) {
+        MatchCRUD matchCRUD = new MatchCRUD();
+        return matchCRUD.getMatchById(id);
+    }
+
+    @Override
     public List<Match> getFutureMatches() {
         MatchCRUD matchCRUD = new MatchCRUD();
         return matchCRUD.getFutureMatches();
