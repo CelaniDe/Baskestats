@@ -54,6 +54,6 @@ public class LeagueStanding extends JFrame {
         String columns[] = {"", "N", "W", "L", "P"};
 
         DefaultTableModel model = new DefaultTableModel(rows2, columns);
-        leagueStanding.setModel(model);
+        LeagueTable.setModel(model);
     }
 }
