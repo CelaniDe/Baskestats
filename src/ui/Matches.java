@@ -12,13 +12,10 @@ public class Matches extends  JFrame {
     private JButton NavHighlights;
     private JLabel MatchesTitle;
     private JPanel Header;
-    private JPanel Mid;
-    private JButton PastButton;
-    private JButton PresentButton;
-    private JButton FutureButton;
-    private JButton Team2ImgButton;
-    private JButton Team1ImgButton;
-    private JLabel MatchInfoLabel;
+    private JTable table1;
+    private JRadioButton futureRadioButton;
+    private JRadioButton presentRadioButton;
+    private JRadioButton pastRadioButton;
 
     public Matches()
     {
