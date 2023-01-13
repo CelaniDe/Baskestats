@@ -8,6 +8,8 @@ import org.json.simple.parser.JSONParser;
 
 import java.io.FileReader;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class GeneralStatsCRUD
@@ -72,5 +74,41 @@ public class GeneralStatsCRUD
         }
 
         return null;
+    }
+
+    public List<GeneralStats> getAllGeneralStatsForPlayers()
+    {
+        JSONParser parser = new JSONParser();
+        List<GeneralStats> listaToReturn = new ArrayList<>();
+        try
+        {
+            Object obj = parser.parse(new FileReader(PLAYER_STATS_JSON_FILE_PATH));
+            JSONArray playerList = (JSONArray) obj;
+
+            for(int i = 0; i < playerList.size(); i++)
+            {
+                JSONObject generalStatsObject = (JSONObject) playerList.get(i);
+                int id = (int)((long) generalStatsObject.get("id"));
+                int points = (int)((long) generalStatsObject.get("points"));
+                int assists = (int)((long) generalStatsObject.get("assists"));
+                int shots = (int)((long) generalStatsObject.get("shots"));
+                listaToReturn.add(new GeneralStats(id,points,assists,shots));
+            }
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+
+        return listaToReturn;
+    }
+
+    public List<GeneralStats> getTop3GeneralStatsByPointsForPlayer()
+    {
+        List<GeneralStats> getAllGeneralStats = getAllGeneralStatsForPlayers();
+
+        getAllGeneralStats.sort((o1, o2) -> o2.getPoints() - o1.getPoints());
+
+        return getAllGeneralStats.subList(0,3);
     }
 }

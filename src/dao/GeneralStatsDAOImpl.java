@@ -3,6 +3,8 @@ package dao;
 import DatabaseFakeJson.GeneralStatsCRUD;
 import model.GeneralStats;
 
+import java.util.List;
+
 public class GeneralStatsDAOImpl implements GeneralStatsDAO
 {
 
@@ -13,5 +15,11 @@ public class GeneralStatsDAOImpl implements GeneralStatsDAO
     @Override
     public GeneralStats getGeneralStatsForPlayer(int player_id) {
         return new GeneralStatsCRUD().getGeneralStatsForPlayer(player_id);
+    }
+
+    @Override
+    public List<GeneralStats> getTop3GeneralStatsByPointsForPlayer() {
+        GeneralStatsCRUD generalStatsCRUD = new GeneralStatsCRUD();
+        return generalStatsCRUD.getTop3GeneralStatsByPointsForPlayer();
     }
 }

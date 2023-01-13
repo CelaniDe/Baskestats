@@ -1,5 +1,6 @@
 package DatabaseFakeJson;
 
+import dao.TeamDAO;
 import model.Team;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -121,6 +122,15 @@ public class TeamCRUD
         {
             e.printStackTrace();
         }
+    }
+
+    public Team getTeamById(int id)
+    {
+        List<Team> allTeams = getTeams();
+        for(Team team : allTeams)
+            if(team.getId() == id)
+                return team;
+        return null;
     }
 
 

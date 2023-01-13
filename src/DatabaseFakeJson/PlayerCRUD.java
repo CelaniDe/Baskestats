@@ -5,6 +5,7 @@ import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.List;
 
+import model.Match;
 import model.Team;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -27,6 +28,7 @@ public class PlayerCRUD {
 
             for (int i = 0; i < playerList.size(); i++) {
                 JSONObject playerObject = (JSONObject) playerList.get(i);
+                int id = (int)((long)playerObject.get("id"));
                 String name = (String) playerObject.get("name");
                 long age = (long) playerObject.get("age");
                 long height = (long) playerObject.get("height");
@@ -34,7 +36,7 @@ public class PlayerCRUD {
                 String nationality = (String) playerObject.get("nationality");
                 int team_id = (int)((long)playerObject.get("team_id"));
 
-                Player player = new Player(name, age, height, weight, nationality,team_id);
+                Player player = new Player(name, age, height, weight, nationality,id,team_id);
                 players.add(player);
             }
             return players;
@@ -134,5 +136,16 @@ public class PlayerCRUD {
         return playersOnTeam;
     }
 
+    public Player getPlayerById(int id)
+    {
+        List<Player> allPlayers = getPlayers();
+        for(Player player : allPlayers)
+        {
+            if(player.getId() == id){
+                return player;
+            }
+        }
+        return null;
+    }
 
 }

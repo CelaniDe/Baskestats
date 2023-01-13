@@ -27,6 +27,7 @@ public class Player
         this.weight = weight;
         Nationality = nationality;
         this.id = id;
+        this.team_id = team_id;
     }
 
     public Player() {

@@ -1,6 +1,14 @@
 package ui;
 
+import dao.GeneralStatsDAO;
+import dao.PlayerDAO;
+import model.GeneralStats;
+import model.Player;
+
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.List;
 
 public class Highlights extends JFrame{
     private JPanel Master;
@@ -35,12 +43,86 @@ public class Highlights extends JFrame{
     private JLabel AssistTitle;
     private JButton NavHighlights;
 
-    public Highlights(){
+    private GeneralStatsDAO generalStatsDAO;
+
+    private PlayerDAO playerDAO;
+
+    public Highlights(GeneralStatsDAO generalStatsDAO,PlayerDAO playerDAO){
+        this.generalStatsDAO = generalStatsDAO;
+        this.playerDAO = playerDAO;
         setContentPane(Master);
         setTitle("Welcome");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
         setSize(1000, 1000);
         setVisible(true);
+        setTopScorers();
+        Scorer1Button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int id_of_firstScorer = getIdOfNTopPlayer(0);
+                JFrame jFrame = new PlayerProfile(id_of_firstScorer);
+                dispose();
+            }
+        });
+        Scorer2Button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int id_of_firstScorer = getIdOfNTopPlayer(1);
+                JFrame jFrame = new PlayerProfile(id_of_firstScorer);
+                dispose();
+            }
+        });
+        Scorer3Button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int id_of_firstScorer = getIdOfNTopPlayer(2);
+                JFrame jFrame = new PlayerProfile(id_of_firstScorer);
+                dispose();
+            }
+        });
+    }
+
+    public void setTopScorers()
+    {
+        set1Scorer();
+        set2Scorer();
+        set3Scorer();
+    }
+
+    public void set1Scorer()
+    {
+
+        int id_of_firstScorer = getIdOfNTopPlayer(0);
+        Player firstScorer = playerDAO.getPlayerById(id_of_firstScorer);
+        this.Scorer1Label.setText(firstScorer.getName());
+        ImageIcon playerIcon = new ImageIcon("src/img/"+id_of_firstScorer+".jpeg");
+        this.Scorer1Button.setIcon(playerIcon);
+    }
+
+    public void set2Scorer()
+    {
+        int id_of_firstScorer = getIdOfNTopPlayer(1);
+        Player firstScorer = playerDAO.getPlayerById(id_of_firstScorer);
+        this.Scorer2Label.setText(firstScorer.getName());
+        ImageIcon playerIcon = new ImageIcon("src/img/"+id_of_firstScorer+".jpeg");
+        this.Scorer2Button.setIcon(playerIcon);
+    }
+
+    public void set3Scorer()
+    {
+        int id_of_firstScorer = getIdOfNTopPlayer(2);
+        Player firstScorer = playerDAO.getPlayerById(id_of_firstScorer);
+        this.Scorer3Label.setText(firstScorer.getName());
+        ImageIcon playerIcon = new ImageIcon("src/img/"+id_of_firstScorer+".jpeg");
+        this.Scorer3Button.setIcon(playerIcon);
+    }
+
+    public int getIdOfNTopPlayer(int n)
+    {
+        List<GeneralStats> first3ScorersGeneralStats = generalStatsDAO.getTop3GeneralStatsByPointsForPlayer();
+        GeneralStats firstScoreGeneralStat = first3ScorersGeneralStats.get(n);
+        int id_of_firstScorer = firstScoreGeneralStat.getId();
+        return id_of_firstScorer;
     }
 }

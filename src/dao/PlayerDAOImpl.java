@@ -1,5 +1,6 @@
 package dao;
 
+import DatabaseFakeJson.PlayerCRUD;
 import model.Player;
 
 import model.Player;
@@ -22,4 +23,9 @@ public class PlayerDAOImpl implements PlayerDAO {
         return new Player[0];
     }
 
+    @Override
+    public Player getPlayerById(int player_id) {
+        PlayerCRUD playerCRUD = new PlayerCRUD();
+        return playerCRUD.getPlayerById(player_id);
+    }
 }
