@@ -3,19 +3,19 @@ package ui;
 import javax.swing.*;
 
 public class CRUD extends JFrame {
-    private JPanel crud;
-    private JButton CRUDTEAMSButton;
-    private JButton CRUDPLAYERSButton;
-    private JButton CRUDMATCHButton;
-    private JButton RUDACCOUNTButton;
+    private JPanel Master;
+    private JButton CRUDTeamsButton;
+    private JButton CRUDPlayersButton;
+    private JButton CRUDMatchButton;
+    private JButton RUDAccountButton;
 
     public CRUD()
     {
-        setContentPane(crud);
+        setContentPane(Master);
         setTitle("CRUD");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
-        setSize(500,500);
+        setSize(1000,1000);
         setVisible(true);
     }
 }

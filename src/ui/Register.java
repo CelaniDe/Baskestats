@@ -9,25 +9,31 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Register extends JFrame{
-    private JLabel registerText;
     private JTextField usernameTextField;
-    private JTextField emailTextField;
     private JTextField passwordTextField;
     private JButton signUpButton;
-    private JPanel panel2;
+    private JPanel Master;
+    private JButton RegisterAccountButton;
+    private JTextField UsernameField;
+    private JTextField EmailField;
+    private JPasswordField PasswordField;
+    private JLabel RegisterTitle;
+    private JLabel PasswordPrompt;
+    private JLabel EmailPrompt;
+    private JLabel UsernamePrompt;
 
     private Register my_frame;
 
     public Register()
     {
         my_frame = this;
-        setContentPane(panel2);
+        setContentPane(Master);
         setTitle("Welcome");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
-        setSize(500,500);
+        setSize(1000,1000);
         setVisible(true);
-        signUpButton.addActionListener(new ActionListener() {
+        RegisterAccountButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 ClientDAO clientDAO = new ClientDAOImpl();

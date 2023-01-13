@@ -10,13 +10,13 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CRUDNEWS extends JFrame {
+public class CRUDNews extends JFrame {
     private JTextField newsTitleTextField;
     private JPanel crudpanel;
     private JTextArea descriptionTextArea;
     private JButton CREATEButton;
 
-    public CRUDNEWS() {
+    public CRUDNews() {
         setContentPane(crudpanel);
         setTitle("Create News");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

@@ -2,32 +2,29 @@ package ui;
 
 import javax.swing.*;
 
-public class Match extends JFrame {
-
+public class TeamProfile extends JFrame {
     private JPanel Master;
+    private JPanel Content;
     private JPanel Navigation;
     private JButton NavMatch;
     private JButton NavLeague;
     private JButton NavSearch;
     private JButton NavNews;
     private JButton NavHighlights;
+    private JLabel TeamProfileTitle;
     private JPanel Header;
-    private JButton Team1ImgButton;
-    private JLabel MatchTitle;
-    private JLabel MatchName;
-    private JLabel VSLabel;
+    private JButton TeamLogoButton;
+    private JLabel TeamName;
     private JPanel Mid;
-    private JLabel Info1;
-    private JLabel Info2;
-    private JLabel Info3;
-    private JLabel Info4;
-    private JLabel Info5;
-    private JButton Team2ImgButton;
+    private JLabel TeamSlogan;
+    private JLabel GamesPlayed;
+    private JLabel Wins;
+    private JTable TeamPlayersTable;
+    private JScrollPane PlayerTablePane;
 
-    public Match()
-    {
+    public TeamProfile() {
         setContentPane(Master);
-        setTitle("Match");
+        setTitle("Welcome");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
         setSize(1000, 1000);

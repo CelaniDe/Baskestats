@@ -2,8 +2,7 @@ package ui;
 
 import javax.swing.*;
 
-public class Match extends JFrame {
-
+public class Search extends JFrame {
     private JPanel Master;
     private JPanel Navigation;
     private JButton NavMatch;
@@ -12,22 +11,23 @@ public class Match extends JFrame {
     private JButton NavNews;
     private JButton NavHighlights;
     private JPanel Header;
-    private JButton Team1ImgButton;
-    private JLabel MatchTitle;
-    private JLabel MatchName;
-    private JLabel VSLabel;
+    private JLabel SearchTitle;
     private JPanel Mid;
-    private JLabel Info1;
-    private JLabel Info2;
-    private JLabel Info3;
-    private JLabel Info4;
-    private JLabel Info5;
-    private JButton Team2ImgButton;
+    private JLabel Result1;
+    private JLabel Result2;
+    private JLabel Result3;
+    private JLabel Result4;
+    private JLabel Result5;
+    private JTextField textField1;
+    private JButton SwitchSearchButton;
+    private JLabel Result6;
+    private JLabel Result7;
+    private JLabel Result8;
 
-    public Match()
+    public Search()
     {
         setContentPane(Master);
-        setTitle("Match");
+        setTitle("Welcome");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
         setSize(1000, 1000);
