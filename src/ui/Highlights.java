@@ -1,6 +1,12 @@
 package ui;
 
+import dao.GeneralStatsDAO;
+import dao.PlayerDAO;
+import model.GeneralStats;
+import model.Player;
+
 import javax.swing.*;
+import java.util.List;
 
 public class Highlights extends JFrame{
     private JPanel Master;
@@ -35,12 +41,41 @@ public class Highlights extends JFrame{
     private JLabel AssistTitle;
     private JButton NavHighlights;
 
-    public Highlights(){
+    private GeneralStatsDAO generalStatsDAO;
+
+    private PlayerDAO playerDAO;
+
+    public Highlights(GeneralStatsDAO generalStatsDAO,PlayerDAO playerDAO){
+        this.generalStatsDAO = generalStatsDAO;
+        this.playerDAO = playerDAO;
         setContentPane(Master);
         setTitle("Welcome");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
         setSize(1000, 1000);
         setVisible(true);
+        setTopScorers();
+    }
+
+    public void setTopScorers()
+    {
+        set1Scorer();
+    }
+
+    public void set1Scorer()
+    {
+        List<GeneralStats> first3ScorersGeneralStats = generalStatsDAO.getTop3GeneralStatsByPointsForPlayer();
+        GeneralStats firstScoreGeneralStat = first3ScorersGeneralStats.get(0);
+        int id_of_firstScorer = firstScoreGeneralStat.getId();
+        Player firstScorer = playerDAO.getPlayerById(id_of_firstScorer);
+        System.out.println(id_of_firstScorer);
+        System.out.println(firstScorer);
+//        for (GeneralStats generalStats : first3ScorersGeneralStats)
+//        {
+//            System.out.println(generalStats.toStringPlayer());
+//        }
+//        Player firstScorer = this.playerDAO.getPlayerById(firstScorerGeneralStats.getId());
+//        System.out.println(firstScorer);
+//        this.Scorer1Label.setText(firstScorer.getName());
     }
 }

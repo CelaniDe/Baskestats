@@ -36,7 +36,7 @@ public class PlayerCRUD {
                 String nationality = (String) playerObject.get("nationality");
                 int team_id = (int)((long)playerObject.get("team_id"));
 
-                Player player = new Player(name, age, height, weight, nationality,team_id,id);
+                Player player = new Player(name, age, height, weight, nationality,id,team_id);
                 players.add(player);
             }
             return players;
@@ -139,9 +139,10 @@ public class PlayerCRUD {
     public Player getPlayerById(int id)
     {
         List<Player> allPlayers = getPlayers();
+        System.out.println(allPlayers);
         for(Player player : allPlayers)
         {
-            System.out.println(player);
+//            System.out.println(player);
             if(player.getId() == id){
                 return player;
 

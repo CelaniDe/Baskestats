@@ -19,19 +19,19 @@
     },
     {
         "id" : 3,
-        "points" : 44,
+        "points" : 50,
         "assists" : 21,
         "shots": 31
     },
     {
         "id" : 4,
-        "points" : 44,
+        "points" : 100,
         "assists" : 21,
         "shots": 31
     },
     {
         "id" : 5,
-        "points" : 44,
+        "points" : 0,
         "assists" : 21,
         "shots": 31
     },
@@ -55,7 +55,7 @@
     },
     {
         "id" : 9,
-        "points" : 44,
+        "points" : 60,
         "assists" : 21,
         "shots": 31
     }
