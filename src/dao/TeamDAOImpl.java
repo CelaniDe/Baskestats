@@ -39,4 +39,11 @@ public class TeamDAOImpl implements TeamDAO
     public String getTeamNameById(int id) {
         return null;
     }
+
+    @Override
+    public Team getTeamById(int id)
+    {
+        TeamCRUD teamCRUD = new TeamCRUD();
+        return teamCRUD.getTeamById(id);
+    }
 }

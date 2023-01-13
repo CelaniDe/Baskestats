@@ -12,4 +12,6 @@ public interface TeamDAO
      public List<Team> getTeams();
      public List<Team> getTeams(String teamNamePassed);
      public String getTeamNameById(int id);
+
+     public Team getTeamById(int id);
 }
