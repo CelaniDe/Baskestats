@@ -1,11 +1,17 @@
 package ui;
 
 import dao.GeneralStatsDAOImpl;
+import dao.MatchDAO;
+import dao.MatchDAOImpl;
 import dao.PlayerDAOImpl;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
+import java.util.List;
 
 public class Matches extends  JFrame {
     private JPanel Master;
@@ -23,8 +29,7 @@ public class Matches extends  JFrame {
     private JRadioButton PresentButton;
     private JRadioButton FutureButton;
 
-    public Matches()
-    {
+    public Matches() {
         setContentPane(Master);
         setTitle("Matches");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -35,7 +40,7 @@ public class Matches extends  JFrame {
         NavHighlights.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JFrame jFrame = new Highlights(new GeneralStatsDAOImpl(),new PlayerDAOImpl());
+                JFrame jFrame = new Highlights(new GeneralStatsDAOImpl(), new PlayerDAOImpl());
                 dispose();
             }
         });
@@ -59,6 +64,76 @@ public class Matches extends  JFrame {
             public void actionPerformed(ActionEvent e) {
                 JFrame jFrame = new LeagueStanding();
                 dispose();
+            }
+        });
+
+       PastButton.addItemListener(new ItemListener() {
+            @Override
+            public void itemStateChanged(ItemEvent e) {
+                if (e.getStateChange() == ItemEvent.SELECTED) {
+                    MatchDAO matchDAO = new MatchDAOImpl();
+                   List<model.Match> pastMatches = matchDAO.getPastMatches();
+
+                    String[][] matchesToAdd = new String[pastMatches.size()][1];
+                    int counter = 0;
+                    for(model.Match pastMatch : pastMatches )
+                    {
+                        matchesToAdd[counter] = new String[]{pastMatch.getDate()};
+                        counter++;
+                    }
+                    String[] columnNames = {"date"};
+                    DefaultTableModel model = new DefaultTableModel(matchesToAdd,columnNames );
+                    MatchesTable.setModel(model);
+//                    else if (e.getStateChange() == ItemEvent.DESELECTED) {
+//
+//                    }
+                }
+            }
+        });
+        PresentButton.addItemListener(new ItemListener() {
+            @Override
+            public void itemStateChanged(ItemEvent e) {
+                if (e.getStateChange() == ItemEvent.SELECTED) {
+                    MatchDAO matchDAO = new MatchDAOImpl();
+                    List<model.Match> presentMatches = matchDAO.getTodayMatches();
+
+                    String[][] matchesToAdd = new String[presentMatches.size()][1];
+                    int counter = 0;
+                    for(model.Match presentMatch : presentMatches )
+                    {
+                        matchesToAdd[counter] = new String[]{presentMatch.getDate()};
+                        counter++;
+                    }
+                    String[] columnNames = {"date"};
+                    DefaultTableModel model = new DefaultTableModel(matchesToAdd,columnNames );
+                    MatchesTable.setModel(model);
+//                    else if (e.getStateChange() == ItemEvent.DESELECTED) {
+//
+//                    }
+                }
+            }
+        });
+        FutureButton.addItemListener(new ItemListener() {
+            @Override
+            public void itemStateChanged(ItemEvent e) {
+                if (e.getStateChange() == ItemEvent.SELECTED) {
+                    MatchDAO matchDAO = new MatchDAOImpl();
+                    List<model.Match> futureMatches = matchDAO.getFutureMatches();
+
+                    String[][] matchesToAdd = new String[futureMatches.size()][1];
+                    int counter = 0;
+                    for(model.Match futureMatch : futureMatches )
+                    {
+                        matchesToAdd[counter] = new String[]{futureMatch.getDate()};
+                        counter++;
+                    }
+                    String[] columnNames = {"date"};
+                    DefaultTableModel model = new DefaultTableModel(matchesToAdd,columnNames );
+                    MatchesTable.setModel(model);
+//                    else if (e.getStateChange() == ItemEvent.DESELECTED) {
+//
+//                    }
+                }
             }
         });
     }
