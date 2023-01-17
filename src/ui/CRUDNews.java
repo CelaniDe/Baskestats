@@ -18,6 +18,7 @@ public class CRUDNews extends JFrame {
 
     public CRUDNews() {
         setContentPane(crudpanel);
+        JFrame my_frame = this;
         setTitle("Create News");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
@@ -30,6 +31,9 @@ public class CRUDNews extends JFrame {
                 List<NewsModel> lista =  new ArrayList<>();
                 lista.add(new NewsModel(newsTitleTextField.getText(),descriptionTextArea.getText()));
                 newsDAO.addNews(lista);
+                JOptionPane.showMessageDialog(my_frame, "The news have been added with success!!!");
+                JFrame frame = new CRUD();
+                dispose();
             }
         });
     }
