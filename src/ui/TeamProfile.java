@@ -1,13 +1,12 @@
 package ui;
 
-import dao.GeneralStatsDAO;
-import dao.GeneralStatsDAOImpl;
-import dao.TeamDAO;
-import dao.TeamDAOImpl;
+import dao.*;
 import model.GeneralStats;
 import model.Team;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class TeamProfile extends JFrame {
     private JPanel Master;
@@ -47,5 +46,42 @@ public class TeamProfile extends JFrame {
         GamesPlayed.setText(GamesPlayed.getText() + " " + teamStats.getNumber_of_matches());
         Wins.setText(Wins.getText() + " " + teamStats.getWins());
         TeamImgButton.setIcon(new ImageIcon("src/img/teams/" + team_id + ".jpeg"));
+
+        NavNews.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame jFrame = new News();
+                dispose();
+            }
+        });
+        NavSearch.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame jFrame = new Search();
+                dispose();
+            }
+        });
+        NavLeague.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame jFrame = new LeagueStanding();
+                dispose();
+            }
+        });
+        NavMatch.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame jFrame = new Matches();
+                dispose();
+            }
+        });
+
+        NavHighlights.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame jFrame = new Highlights(new GeneralStatsDAOImpl(), new PlayerDAOImpl());
+                dispose();
+            }
+        });
     }
 }

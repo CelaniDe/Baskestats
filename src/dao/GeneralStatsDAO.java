@@ -9,4 +9,6 @@ public interface GeneralStatsDAO
     public GeneralStats getGeneralStatsForTeam(int team_id);
     public GeneralStats getGeneralStatsForPlayer(int player_id);
     public List<GeneralStats> getTop3GeneralStatsByPointsForPlayer();
+    public List<GeneralStats> getTop3GeneralStatsByWinsForTeams();
+    public List<GeneralStats> getTop3GeneralStatsByAssistsForPlayer();
 }

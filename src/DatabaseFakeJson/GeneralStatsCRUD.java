@@ -47,6 +47,36 @@ public class GeneralStatsCRUD
 
         return null;
     }
+
+    public List<GeneralStats> getGeneralStatsForAllTeams()
+    {
+        JSONParser parser = new JSONParser();
+        List<GeneralStats> listaToReturn = new ArrayList<>();
+        try
+        {
+            Object obj = parser.parse(new FileReader(GENERAL_STATS_JSON_FILE_PATH));
+            JSONArray teamList = (JSONArray) obj;
+
+            for(int i = 0; i < teamList.size(); i++)
+            {
+                JSONObject generalStatsObject = (JSONObject) teamList.get(i);
+                int id = (int)((long) generalStatsObject.get("team_id"));
+                int number_of_matches = (int)((long) generalStatsObject.get("number_of_matches"));
+                int wins = (int)((long) generalStatsObject.get("wins"));
+                int loses = (int)((long) generalStatsObject.get("loses"));
+                int points = (int)((long) generalStatsObject.get("points"));
+                listaToReturn.add(new GeneralStats(id,number_of_matches,wins,loses,points));
+            }
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+
+        return listaToReturn;
+    }
+
+
     public GeneralStats getGeneralStatsForPlayer(int player_id)
     {
         JSONParser parser = new JSONParser();
@@ -108,6 +138,24 @@ public class GeneralStatsCRUD
         List<GeneralStats> getAllGeneralStats = getAllGeneralStatsForPlayers();
 
         getAllGeneralStats.sort((o1, o2) -> o2.getPoints() - o1.getPoints());
+
+        return getAllGeneralStats.subList(0,3);
+    }
+
+    public List<GeneralStats> getTop3GeneralStatsByAssistsForPlayer()
+    {
+        List<GeneralStats> getAllGeneralStats = getAllGeneralStatsForPlayers();
+
+        getAllGeneralStats.sort((o1, o2) -> o2.getAssists() - o1.getAssists());
+
+        return getAllGeneralStats.subList(0,3);
+    }
+
+    public List<GeneralStats> getTop3GeneralStatsByWinsForTeams()
+    {
+        List<GeneralStats> getAllGeneralStats = getGeneralStatsForAllTeams();
+
+        getAllGeneralStats.sort((o1, o2) -> o2.getWins() - o1.getWins());
 
         return getAllGeneralStats.subList(0,3);
     }
