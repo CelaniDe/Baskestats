@@ -22,4 +22,16 @@ public class GeneralStatsDAOImpl implements GeneralStatsDAO
         GeneralStatsCRUD generalStatsCRUD = new GeneralStatsCRUD();
         return generalStatsCRUD.getTop3GeneralStatsByPointsForPlayer();
     }
+
+    @Override
+    public List<GeneralStats> getTop3GeneralStatsByWinsForTeams() {
+        GeneralStatsCRUD generalStatsCRUD = new GeneralStatsCRUD();
+        return generalStatsCRUD.getTop3GeneralStatsByWinsForTeams();
+    }
+
+    @Override
+    public List<GeneralStats> getTop3GeneralStatsByAssistsForPlayer() {
+        GeneralStatsCRUD generalStatsCRUD = new GeneralStatsCRUD();
+        return generalStatsCRUD.getTop3GeneralStatsByAssistsForPlayer();
+    }
 }
