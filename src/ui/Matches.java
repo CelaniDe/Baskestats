@@ -1,9 +1,6 @@
 package ui;
 
-import dao.GeneralStatsDAOImpl;
-import dao.MatchDAO;
-import dao.MatchDAOImpl;
-import dao.PlayerDAOImpl;
+import dao.*;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -72,6 +69,7 @@ public class Matches extends  JFrame {
             public void itemStateChanged(ItemEvent e) {
                 if (e.getStateChange() == ItemEvent.SELECTED) {
                     MatchDAO matchDAO = new MatchDAOImpl();
+                    TeamDAO teamDAO = new TeamDAOImpl();
                    List<model.Match> pastMatches = matchDAO.getPastMatches();
 
                     String[][] matchesToAdd = new String[pastMatches.size()][1];
@@ -79,9 +77,9 @@ public class Matches extends  JFrame {
                     for(model.Match pastMatch : pastMatches )
                     {
                         matchesToAdd[counter] = new String[]{
-                                String.valueOf(pastMatch.getHome()),
+                                String.valueOf(teamDAO.getTeamById(pastMatch.getHome()).getName()),
                                 String.valueOf(pastMatch.getDate()),
-                                String.valueOf(pastMatch.getAway())
+                                String.valueOf(teamDAO.getTeamById(pastMatch.getAway()).getName())
                         };
                         counter++;
                     }
@@ -97,6 +95,7 @@ public class Matches extends  JFrame {
             public void itemStateChanged(ItemEvent e) {
                 if (e.getStateChange() == ItemEvent.SELECTED) {
                     MatchDAO matchDAO = new MatchDAOImpl();
+                    TeamDAO teamDAO = new TeamDAOImpl();
                     List<model.Match> presentMatches = matchDAO.getTodayMatches();
 
                     String[][] matchesToAdd = new String[presentMatches.size()][1];
@@ -104,9 +103,9 @@ public class Matches extends  JFrame {
                     for(model.Match presentMatch : presentMatches )
                     {
                         matchesToAdd[counter] = new String[]{
-                                String.valueOf(presentMatch.getHome()),
+                                String.valueOf(teamDAO.getTeamById(presentMatch.getHome()).getName()),
                                 String.valueOf(presentMatch.getDate()),
-                                String.valueOf(presentMatch.getAway())};
+                                String.valueOf(teamDAO.getTeamById(presentMatch.getAway()).getName())};
                         counter++;
                     }
                     String[] columnNames = {"home","date","away"};
@@ -121,6 +120,7 @@ public class Matches extends  JFrame {
             public void itemStateChanged(ItemEvent e) {
                 if (e.getStateChange() == ItemEvent.SELECTED) {
                     MatchDAO matchDAO = new MatchDAOImpl();
+                    TeamDAO teamDAO = new TeamDAOImpl();
                     List<model.Match> futureMatches = matchDAO.getFutureMatches();
 
                     String[][] matchesToAdd = new String[futureMatches.size()][1];
@@ -128,9 +128,9 @@ public class Matches extends  JFrame {
                     for(model.Match futureMatch : futureMatches )
                     {
                         matchesToAdd[counter] = new String[]{
-                                String.valueOf(futureMatch.getHome()),
+                                String.valueOf(teamDAO.getTeamById(futureMatch.getHome()).getName()),
                                 String.valueOf(futureMatch.getDate()),
-                                String.valueOf(futureMatch.getAway())};
+                                String.valueOf(teamDAO.getTeamById(futureMatch.getAway()).getName())};
                         counter++;
                     }
                     String[] columnNames = {"home","date","away"};
