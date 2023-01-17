@@ -7,6 +7,7 @@ import org.json.simple.parser.JSONParser;
 
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.util.ArrayList;
 import java.util.List;
 
 public class NewsCRUD {
@@ -72,5 +73,30 @@ public class NewsCRUD {
                 e.printStackTrace();
             }
         }
+    }
+    public List<NewsModel> getNews()
+    {
+        JSONParser parser = new JSONParser();
+
+        try {
+            Object obj = parser.parse(new FileReader(NEWS_JSON_FILE_PATH));
+
+            JSONArray newsList = (JSONArray) obj;
+            List<NewsModel> news = new ArrayList<>();
+
+            for (int i = 0; i < newsList.size(); i++) {
+                JSONObject newsObject = (JSONObject) newsList.get(i);
+                String title = (String) newsObject.get("title");
+                String description = (String) newsObject.get("description");
+                int id = (int)((long) newsObject.get("id"));
+
+                NewsModel newsModel = new NewsModel(title,description,id);
+                news.add(newsModel);
+            }
+            return news;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }

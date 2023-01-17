@@ -42,4 +42,13 @@ public class NewsModel {
     public void setId(int id) {
         this.id = id;
     }
+
+    @Override
+    public String toString() {
+        return "NewsModel{" +
+                "title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", id=" + id +
+                '}';
+    }
 }

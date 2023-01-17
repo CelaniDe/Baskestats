@@ -18,4 +18,9 @@ public class NewsDAOImpl implements NewsDAO {
         NewsCRUD newsCRUD = new NewsCRUD();
         newsCRUD.addNews(newsL);
     }
+    @Override
+    public List<NewsModel> getNews(){
+        NewsCRUD newsCRUD = new NewsCRUD();
+        return newsCRUD.getNews();
+    }
 }

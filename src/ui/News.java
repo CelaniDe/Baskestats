@@ -1,12 +1,16 @@
 package ui;
 
 import dao.GeneralStatsDAOImpl;
+import dao.NewsDAO;
+import dao.NewsDAOImpl;
 import dao.PlayerDAOImpl;
+import model.NewsModel;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.List;
 
 public class News extends JFrame{
     private JPanel Master;
@@ -29,12 +33,14 @@ public class News extends JFrame{
         setSize(1000,800);
         setVisible(true);
 
-        String[][] data = {
-                { "Makis o oreos! ","Lorem Ipsum is simply dummy text of the printing and typesetting industry. \n Lorem Ipsum is simply dummy text of the printing and typesetting industry."},
-        };
-
+        NewsDAO newsDao = new NewsDAOImpl();
+        List<NewsModel> newsList = newsDao.getNews();
+        String[][] data = new String[newsList.size()][2];
         String[] columnNames = { "Title" , "Description"};
 
+        for (int i=0;i < newsList.size(); i++){
+            data[i] = new String[]{newsList.get(i).getTitle().toString(), newsList.get(i).getDescription().toString()};
+        }
         DefaultTableModel model = new DefaultTableModel(data, columnNames);
         NewsTable.setModel(model);
 
