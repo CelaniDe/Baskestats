@@ -78,15 +78,17 @@ public class Matches extends  JFrame {
                     int counter = 0;
                     for(model.Match pastMatch : pastMatches )
                     {
-                        matchesToAdd[counter] = new String[]{pastMatch.getDate()};
+                        matchesToAdd[counter] = new String[]{
+                                String.valueOf(pastMatch.getHome()),
+                                String.valueOf(pastMatch.getDate()),
+                                String.valueOf(pastMatch.getAway())
+                        };
                         counter++;
                     }
-                    String[] columnNames = {"date"};
+                    String[] columnNames = {"home","date","away"};
                     DefaultTableModel model = new DefaultTableModel(matchesToAdd,columnNames );
                     MatchesTable.setModel(model);
-//                    else if (e.getStateChange() == ItemEvent.DESELECTED) {
-//
-//                    }
+
                 }
             }
         });
@@ -101,15 +103,16 @@ public class Matches extends  JFrame {
                     int counter = 0;
                     for(model.Match presentMatch : presentMatches )
                     {
-                        matchesToAdd[counter] = new String[]{presentMatch.getDate()};
+                        matchesToAdd[counter] = new String[]{
+                                String.valueOf(presentMatch.getHome()),
+                                String.valueOf(presentMatch.getDate()),
+                                String.valueOf(presentMatch.getAway())};
                         counter++;
                     }
-                    String[] columnNames = {"date"};
+                    String[] columnNames = {"home","date","away"};
                     DefaultTableModel model = new DefaultTableModel(matchesToAdd,columnNames );
                     MatchesTable.setModel(model);
-//                    else if (e.getStateChange() == ItemEvent.DESELECTED) {
-//
-//                    }
+
                 }
             }
         });
@@ -124,15 +127,16 @@ public class Matches extends  JFrame {
                     int counter = 0;
                     for(model.Match futureMatch : futureMatches )
                     {
-                        matchesToAdd[counter] = new String[]{futureMatch.getDate()};
+                        matchesToAdd[counter] = new String[]{
+                                String.valueOf(futureMatch.getHome()),
+                                String.valueOf(futureMatch.getDate()),
+                                String.valueOf(futureMatch.getAway())};
                         counter++;
                     }
-                    String[] columnNames = {"date"};
+                    String[] columnNames = {"home","date","away"};
                     DefaultTableModel model = new DefaultTableModel(matchesToAdd,columnNames );
                     MatchesTable.setModel(model);
-//                    else if (e.getStateChange() == ItemEvent.DESELECTED) {
-//
-//                    }
+
                 }
             }
         });

@@ -3,24 +3,32 @@
     "id" : 0,
     "date" : "8-2-2023" ,
     "time" : "20:00",
-    "stadium" : "Madison Square Garden"
+    "stadium" : "Madison Square Garden",
+    "home" : 0,
+    "away" : 1
   },
   {
     "id" : 1,
     "date" : "10-1-2023" ,
     "time" : "15:00",
-    "stadium" : "Paycom Center"
+    "stadium" : "Paycom Center",
+    "home" : 3,
+    "away" : 2
   },
   {
     "id" : 2,
     "date" : "10-2-2023" ,
     "time" : "15:00",
-    "stadium" : "Amyway Center"
+    "stadium" : "Amyway Center",
+    "home" : 4,
+    "away" : 2
   },
   {
     "id" : 3,
     "date" : "14-1-2023" ,
     "time" : "15:00",
-    "stadium" : "Amyway Center"
+    "stadium" : "Amyway Center",
+    "home" : 5,
+    "away" : 6
   }
 ]
