@@ -2,8 +2,11 @@ package ui;
 
 import dao.GeneralStatsDAO;
 import dao.PlayerDAO;
+import dao.TeamDAO;
+import dao.TeamDAOImpl;
 import model.GeneralStats;
 import model.Player;
+import model.Team;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -46,10 +49,12 @@ public class Highlights extends JFrame{
     private GeneralStatsDAO generalStatsDAO;
 
     private PlayerDAO playerDAO;
+    private TeamDAO teamDAO;
 
     public Highlights(GeneralStatsDAO generalStatsDAO,PlayerDAO playerDAO){
         this.generalStatsDAO = generalStatsDAO;
         this.playerDAO = playerDAO;
+        this.teamDAO = new TeamDAOImpl();
         setContentPane(Master);
         setTitle("Highlights");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -57,6 +62,82 @@ public class Highlights extends JFrame{
         setSize(1000, 800);
         setVisible(true);
         setTopScorers();
+        setTopTeams();
+        setTopAssists();
+        AddActionsForScorersButtons();
+        AddActionsForTeamsButtons();
+        AddActionsForAssistsButtons();
+    }
+
+    private void setTopAssists()
+    {
+        set1Assists();
+        set2Assists();
+        set3Assists();
+    }
+
+    private void set1Assists()
+    {
+        int id_of_firstScorer = getIdOfNTopPlayerForAssists(0);
+        Player firstScorer = playerDAO.getPlayerById(id_of_firstScorer);
+        this.Assist1Label.setText(firstScorer.getName());
+        ImageIcon playerIcon = new ImageIcon("src/img/"+id_of_firstScorer+".jpeg");
+        this.Assist1Button.setIcon(playerIcon);
+    }
+
+    private void set2Assists()
+    {
+        int id_of_firstScorer = getIdOfNTopPlayerForAssists(1);
+        Player firstScorer = playerDAO.getPlayerById(id_of_firstScorer);
+        this.Assist2Label.setText(firstScorer.getName());
+        ImageIcon playerIcon = new ImageIcon("src/img/"+id_of_firstScorer+".jpeg");
+        this.Assist2Button.setIcon(playerIcon);
+    }
+
+    private void set3Assists()
+    {
+        int id_of_firstScorer = getIdOfNTopPlayerForAssists(2);
+        Player firstScorer = playerDAO.getPlayerById(id_of_firstScorer);
+        this.Assist3Label.setText(firstScorer.getName());
+        ImageIcon playerIcon = new ImageIcon("src/img/"+id_of_firstScorer+".jpeg");
+        this.Assist3Button.setIcon(playerIcon);
+    }
+
+    private void setTopTeams()
+    {
+        set1Team();
+        set2Team();
+        set3Team();
+    }
+
+    private void set1Team()
+    {
+        int id_of_firstScorer = getIdOfNTopTeam(0);
+        Team firstScorer = teamDAO.getTeamById(id_of_firstScorer);
+        this.Team1Label.setText(firstScorer.getName());
+        ImageIcon playerIcon = new ImageIcon("src/img/teams/"+id_of_firstScorer+".jpeg");
+        this.Team1Button.setIcon(playerIcon);
+    }
+
+    private void set2Team()
+    {
+        int id_of_firstScorer = getIdOfNTopTeam(1);
+        Team firstScorer = teamDAO.getTeamById(id_of_firstScorer);
+        this.Team2Label.setText(firstScorer.getName());
+        ImageIcon playerIcon = new ImageIcon("src/img/teams/"+id_of_firstScorer+".jpeg");
+        this.Team2Button.setIcon(playerIcon);
+    }
+
+    private void set3Team()
+    {
+        int id_of_firstScorer = getIdOfNTopTeam(2);
+        Team firstScorer = teamDAO.getTeamById(id_of_firstScorer);
+        this.Team3Label.setText(firstScorer.getName());
+        ImageIcon playerIcon = new ImageIcon("src/img/teams/"+id_of_firstScorer+".jpeg");
+        this.Team3Button.setIcon(playerIcon);
+    }
+
+    private void AddActionsForScorersButtons() {
         Scorer1Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -152,5 +233,53 @@ public class Highlights extends JFrame{
         GeneralStats firstScoreGeneralStat = first3ScorersGeneralStats.get(n);
         int id_of_firstScorer = firstScoreGeneralStat.getId();
         return id_of_firstScorer;
+    }
+
+    public int getIdOfNTopPlayerForAssists(int n)
+    {
+        List<GeneralStats> first3ScorersGeneralStats = generalStatsDAO.getTop3GeneralStatsByAssistsForPlayer();
+        GeneralStats firstScoreGeneralStat = first3ScorersGeneralStats.get(n);
+        int id_of_firstScorer = firstScoreGeneralStat.getId();
+        return id_of_firstScorer;
+    }
+
+    public int getIdOfNTopTeam(int n)
+    {
+        List<GeneralStats> first3TeamsGeneralStats = generalStatsDAO.getTop3GeneralStatsByWinsForTeams();
+        GeneralStats firstwinGeneralStat = first3TeamsGeneralStats.get(n);
+        int id_of_firstTeam = firstwinGeneralStat.getId();
+        return id_of_firstTeam;
+    }
+
+    private void AddActionsForTeamsButtons()
+    {
+        JButton[] teamsButtons = {Team1Button,Team2Button,Team3Button};
+        int counter = 0;
+        for(JButton button : teamsButtons)
+        {
+            int finalCounter = counter;
+            button.addActionListener(e -> {
+                int id_of_team = getIdOfNTopTeam(finalCounter);
+                JFrame jFrame = new TeamProfile(id_of_team);
+                dispose();
+            });
+            counter++;
+        }
+    }
+
+    private void AddActionsForAssistsButtons()
+    {
+        JButton[] assistsButtons = {Assist1Button,Assist2Button,Assist3Button};
+        int counter = 0;
+        for(JButton button : assistsButtons)
+        {
+            int finalCounter = counter;
+            button.addActionListener(e -> {
+                int id_of_player = getIdOfNTopPlayerForAssists(finalCounter);
+                JFrame jFrame = new PlayerProfile(id_of_player);
+                dispose();
+            });
+            counter++;
+        }
     }
 }

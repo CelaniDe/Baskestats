@@ -33,7 +33,9 @@ public class MatchCRUD
                 String date = (String) matchObject.get("date");
                 String time = (String) matchObject.get("time");
                 String stadium = (String) matchObject.get("stadium");
-                Match newMatch = new Match(date,stadium,id,time);
+                int home = (int)((long) matchObject.get("home"));
+                int away = (int)((long) matchObject.get("away"));
+                Match newMatch = new Match(date,stadium,id,time,home,away);
                 matches.add(newMatch);
             }
         }

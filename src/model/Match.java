@@ -4,16 +4,22 @@ public class Match {
 
     public Match() {}
 
-    public Match(String date, String stadium, int id, String time) {
+    public Match(String date, String stadium, int id, String time, int home, int away) {
         this.date = date;
         this.stadium = stadium;
         this.id = id;
         this.time = time;
+        this.home = home;
+        this.away = away;
     }
     private String date;
     private String time;
     private String stadium;
     private int id;
+
+    private int home;
+
+    private int away;
 
 
     public String getStadium() {
@@ -48,13 +54,31 @@ public class Match {
         this.id = id;
     }
 
+    public int getHome() {
+        return home;
+    }
+
+    public void setHome(int home) {
+        this.home = home;
+    }
+
+    public int getAway() {
+        return away;
+    }
+
+    public void setAway(int away) {
+        this.away = away;
+    }
+
     @Override
     public String toString() {
         return "Match{" +
                 "date='" + date + '\'' +
                 ", time='" + time + '\'' +
                 ", stadium='" + stadium + '\'' +
-                ", id=" + id +
+                ", id=" + id + '\'' +
+                ", home=" + home + '\'' +
+                ", away=" + away + '\'' +
                 '}';
     }
 }
