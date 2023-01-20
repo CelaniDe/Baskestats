@@ -9,6 +9,8 @@ import javax.swing.*;
 import javax.swing.table.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 public class LeagueStanding extends JFrame {
@@ -51,6 +53,15 @@ public class LeagueStanding extends JFrame {
         }
 
         String columns[] = {"", "N", "W", "L", "P"};
+
+        Arrays.sort(rows2, new Comparator<String[]>() {
+            public int compare(String[] frst, String[] scnd) {
+                if(Integer.parseInt(frst[4]) < Integer.parseInt(scnd[4])) {
+                    return 1;
+                }
+                else return -1;
+            }
+        });
 
         DefaultTableModel model = new DefaultTableModel(rows2, columns);
         LeagueTable.setModel(model);
