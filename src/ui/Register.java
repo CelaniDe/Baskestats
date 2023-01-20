@@ -37,7 +37,7 @@ public class Register extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 ClientDAO clientDAO = new ClientDAOImpl();
-                Account createdAccount = clientDAO.addClient(usernameTextField.getText(),passwordTextField.getText());
+                Account createdAccount = clientDAO.addClient(UsernameField.getText(),PasswordField.getText());
                 if(createdAccount == null)
                 {
                     JOptionPane.showMessageDialog(my_frame,
