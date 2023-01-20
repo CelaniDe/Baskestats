@@ -119,26 +119,32 @@ public class Matches extends  JFrame {
             @Override
             public void itemStateChanged(ItemEvent e) {
                 if (e.getStateChange() == ItemEvent.SELECTED) {
-                    MatchDAO matchDAO = new MatchDAOImpl();
-                    TeamDAO teamDAO = new TeamDAOImpl();
-                    List<model.Match> futureMatches = matchDAO.getFutureMatches();
-
-                    String[][] matchesToAdd = new String[futureMatches.size()][1];
-                    int counter = 0;
-                    for(model.Match futureMatch : futureMatches )
-                    {
-                        matchesToAdd[counter] = new String[]{
-                                String.valueOf(teamDAO.getTeamById(futureMatch.getHome()).getName()),
-                                String.valueOf(futureMatch.getDate()),
-                                String.valueOf(teamDAO.getTeamById(futureMatch.getAway()).getName())};
-                        counter++;
-                    }
-                    String[] columnNames = {"home","date","away"};
-                    DefaultTableModel model = new DefaultTableModel(matchesToAdd,columnNames );
-                    MatchesTable.setModel(model);
+                    DisplayFutureMatches();
 
                 }
             }
         });
+
+        DisplayFutureMatches();
+    }
+
+    private void DisplayFutureMatches() {
+        MatchDAO matchDAO = new MatchDAOImpl();
+        TeamDAO teamDAO = new TeamDAOImpl();
+        List<model.Match> futureMatches = matchDAO.getFutureMatches();
+
+        String[][] matchesToAdd = new String[futureMatches.size()][1];
+        int counter = 0;
+        for(model.Match futureMatch : futureMatches )
+        {
+            matchesToAdd[counter] = new String[]{
+                    String.valueOf(teamDAO.getTeamById(futureMatch.getHome()).getName()),
+                    String.valueOf(futureMatch.getDate()),
+                    String.valueOf(teamDAO.getTeamById(futureMatch.getAway()).getName())};
+            counter++;
+        }
+        String[] columnNames = {"home","date","away"};
+        DefaultTableModel model = new DefaultTableModel(matchesToAdd,columnNames );
+        MatchesTable.setModel(model);
     }
 }
